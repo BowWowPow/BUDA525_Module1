@@ -89,7 +89,7 @@ tools that have similar capabilities to R but the major advantage of R
 is that it is \*\* FREE \*\*. It is free as in no cost, and free as in
 you can do whatever you want with it. It is designed to do things as
 simple as calculating means and as complex as recommending songs on
-systems like Pandora. The last reason we are using it is because it is
+systems like Spotify The last reason we are using it is because it is
 the \`\`it” thing in statistics and analytics right now. If you can use
 R you can use and learn any other statistical software easily. One of
 the things you will be able to take away from this course at the end is
