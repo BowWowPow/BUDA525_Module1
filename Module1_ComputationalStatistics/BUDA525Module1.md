@@ -42,6 +42,8 @@ Brad Price, Ph.D.
 
 ## Introduction to Statistical Computing and Computational Statistics
 
+![](https://youtu.be/tm4188bx2BU)
+
 Traditional statistics courses focus on formulas and p-values that come
 from a table or straight out of the back of a textbook, while I believe
 that has it’s place in analytics we need to focus more on understanding
