@@ -1,0 +1,93 @@
+---
+title: "Introduction to Tidyverse, Pipes, and Dplyr"
+author: "BUDA 525"
+date: "10/08/2024"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+### Introduction to the Tidyverse and the Pipe Operator
+
+Now that we understand some of the basics in R let's start looking at some of the modern developments in R.  The "Tidyverse" as it is known are a set of packages that allow for a more simplistic workflow.  One of the main operators we're going to look at in this case ins the ` %>% ` operator which is known as the pipe operator, also known as the forward pipe operator.  What this operator does is 
+take the proceeding element and feed into the following function.  Let's take a look at something very simple
+you learned in a previous section:
+
+```{r}
+library(alr4)
+library(dplyr)
+BigMac2003%>%head()
+```
+
+The way we can think about this result is that it's the same as saying `head(BigMac2003)`.  It doesn't seem like it's going to save us much, but it turns out that when we are sub-setting, or working through larger workflows it can actually simplify what we are doing.  
+
+Let's take a look at new data set here just to get a feel for some functionality of the `dplyr` package, which is a BIG part of the tidyverse, and is a major package used for data manipulation.  
+```{r}
+iris%>%head()
+iris%>%dim()
+```
+
+
+#### `dplyr`: `filter`
+Next let's look and the filter function. The first argument of the `filter` function is what data frame we want to filter, and if we're using pipes, that will be what is passed by the pipes.  So the second argument is the name of the variable and how we want it filtered.  So think of it this way.
+
+```{r eval=FALSE}
+filter(data frame, variable1 condition)
+```
+
+Now let's look at an example and I'm going to use a pipe to pass the data frame so we only need to focus on the variable and the condition.  I want to filter the data so we are only looking at setosa's.  
+```{r}
+seosta_only=iris%>% filter(Species=="setosa")
+seosta_only
+```
+
+Next let's look at an example where we want to filter a continuous variable like Petal.Length
+
+```{r}
+long_petals=iris%>% filter(Petal.Length>1.5)
+head(long_petals)
+```
+
+#### `dplyr`:`select`
+
+The `select` function allows us to subset a set of variables from the data frame.  Think of this as doing a column reduction of the data set by name.  So the function sets up nicely as 
+
+```{r eval=FALSE}
+select(data frame, varaible1, variable2, ....)
+```
+
+Now let's just select the sepal variable from the iris data set.
+```{r}
+subs=iris%>% select(Sepal.Length,Sepal.Width)
+head(subs)
+```
+
+##### `dplyr`:`group_by`
+
+The `group_by` function just orders data by a factor, so below we just want to order our data by `Species`.
+
+```{r}
+keep=iris%>%group_by(Species)
+head(keep)
+```
+
+#### `dplyr`:`arrange`
+
+The `arrange` function is another way to order a continuous variables, this time we'll choose to do it in descending order
+```{r}
+me=iris%>% arrange(desc(Petal.Length))
+head(me)
+```
+#### `dplyr`:`summarise`
+
+The `summarize` function allows you to create summary statistics of each of these variables.  In this case we want to count each species and then return each sepal length.  
+```{r}
+m2<-iris%>%group_by(Species)%>% summarise(
+  n=n(),
+  mean_s_length=mean(Sepal.Length)
+)
+m2
+```
+
+Right now your head my be spinning a little and that is ok.  There are many options in R, and many ways to do the same things.  The important part is to know where to start and that is what we have done here.  We've started to lay the foundations for you to know how to learn R and where to begin your journey. 
