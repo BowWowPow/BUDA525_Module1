@@ -3,7 +3,6 @@ title: "Introduction to Satistical Computing and Computational Statistics"
 author: Brad Price, Ph.D.
 output: 
   github_document:
-    html_preview: false
     toc: true
 always_allow_html: true
 ---
@@ -15,7 +14,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Introduction to Statistical Computing and Computational Statistics
 
-```{r}
+```{r, echo=FALSE}
 library(vembedr)
 embed_url("https://youtu.be/tm4188bx2BU")
 ```
