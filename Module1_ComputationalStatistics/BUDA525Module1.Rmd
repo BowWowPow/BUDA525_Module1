@@ -16,7 +16,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ```{r, echo=FALSE}
 library(vembedr)
-embed_url("https://youtu.be/tm4188bx2BU")
+embed_youtube("https://youtu.be/tm4188bx2BU")
 ```
 
 Traditional statistics courses focus on formulas and p-values that come from a table or straight out of the back of a textbook, while I believe that has it's 

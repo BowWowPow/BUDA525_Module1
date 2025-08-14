@@ -44,7 +44,7 @@ Brad Price, Ph.D.
 
 <div class="vembedr">
 <div>
-<iframe src="https://www.youtube.com/embed/tm4188bx2BU" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
+<iframe src="https://www.youtube.com/embed/https://youtu.be/tm4188bx2BU" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
 </div>
 </div>
 
