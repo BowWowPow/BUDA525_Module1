@@ -14,7 +14,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Introduction to Statistical Computing and Computational Statistics
 
-```{r, echo=FALSE}
+```{r}
 library(vembedr)
 embed_url("https://youtu.be/tm4188bx2BU")
 ```
