@@ -78,6 +78,12 @@ computaitonal foundations.
 
 ### What is R?
 
+<div class="vembedr">
+<div>
+<iframe src="https://www.youtube.com/embed/0E_JQ_R8uKc" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
+</div>
+</div>
+
 R is a free statistical software that is used by both applied and
 research statisticians. If this were a statistics course for future
 statisticians that would be enough, but it’s not. So why are we using R
@@ -120,6 +126,18 @@ you are running on from the top of the page and follow the steps
 associated with it.
 
 ### Using R
+
+<div class="vembedr">
+<div>
+<iframe src="https://www.youtube.com/embed/fy8vyKPOOEI" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
+</div>
+</div>
+
+<div class="vembedr">
+<div>
+<iframe src="https://www.youtube.com/embed/R6TsYvlIw6o" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
+</div>
+</div>
 
 The next thing that we need to understand about R is that it is only as
 smart as the user, which means it will only do what you tell it to do.
@@ -301,13 +319,15 @@ Number\]. So if I just wanted to view the first column of the data
 (corresponding to the variable BigMac) we would type
 
 ``` r
-BigMac2003[,1]
+BigMac2003[,4]
 ```
 
-    ##  [1]  16  21  19  50  22  15  16  93  54  18  79  43  45  76  10  16  22  15  15
-    ## [20]  16  19  13  36  67  33 132  84  25  55  79  33  39  16  10  17  15  21  24
-    ## [39]  62  75  10  21  14  30 112 185  12  18  19  42  48  43  26  52  33  28  30
-    ## [58]  21  31  19  19  18  49  31  10  14  15  62  44
+    ##  [1]  65.9  63.5  55.4  46.4  62.9  98.4  64.4  33.3  36.9  74.7  36.4  43.9
+    ## [13]  27.3  49.5  93.2  78.0  63.6  74.7  62.3 100.6  75.3 128.2  51.0  49.9
+    ## [25]  41.1  35.7  25.7  41.4  74.1  41.0  58.7  57.3  69.3  89.2  94.9  72.2
+    ## [37]  62.2  76.5  63.9  32.5  44.0  67.4  62.6  41.5  23.5  45.6 109.6 102.2
+    ## [49]  81.1  29.4  36.0  38.8  75.5  37.0  41.2 101.7  64.3  74.7  36.4  75.5
+    ## [61]  62.6 103.2  42.0  69.4 129.4  61.0  76.4  33.8  36.0
 
 Again this is just the first column of the data. As we go on we will see
 more and more of how to access things in `R`, but the most important
@@ -323,10 +343,18 @@ histogram and a box-plot.
 
 ``` r
 attach(BigMac2003)
+```
+
+    ## The following objects are masked from BigMac2003 (pos = 3):
+    ## 
+    ##     Apt, BigMac, Bread, Bus, FoodIndex, Rice, TaxRate, TeachGI,
+    ##     TeachHours, TeachNI
+
+``` r
 hist(TeachNI, main="Teachers Net Income (in $1000's)")
 ```
 
-![](BUDA525Module1_files/figure-gfm/unnamed-chunk-10-1.png)<!-- -->
+![](BUDA525Module1_files/figure-gfm/unnamed-chunk-13-1.png)<!-- -->
 
 To change the number of bins in the histogram we run the code:
 
@@ -334,7 +362,7 @@ To change the number of bins in the histogram we run the code:
 hist(TeachNI,breaks=15, main="Teachers Net Income (in $1000s)")
 ```
 
-![](BUDA525Module1_files/figure-gfm/unnamed-chunk-11-1.png)<!-- -->
+![](BUDA525Module1_files/figure-gfm/unnamed-chunk-14-1.png)<!-- -->
 
 In either plot we are seeing the the data has a long right tail. To do a
 box-plot we run the code:
@@ -343,7 +371,7 @@ box-plot we run the code:
 boxplot(TeachNI, main="A boxplot of Teachers Net Income (in $1000s)")
 ```
 
-![](BUDA525Module1_files/figure-gfm/unnamed-chunk-12-1.png)<!-- -->
+![](BUDA525Module1_files/figure-gfm/unnamed-chunk-15-1.png)<!-- -->
 
 Now that we are able to visualize the data we can quickly calculate
 summary statistics that we need. The first thing we can do is quickly
@@ -1499,37 +1527,7 @@ very simple you learned in a previous section:
 
 ``` r
 library(alr4)
-```
-
-    ## Loading required package: car
-
-    ## Loading required package: carData
-
-    ## Loading required package: effects
-
-    ## lattice theme set by effectsTheme()
-    ## See ?effectsTheme for details.
-
-``` r
 library(dplyr)
-```
-
-    ## 
-    ## Attaching package: 'dplyr'
-
-    ## The following object is masked from 'package:car':
-    ## 
-    ##     recode
-
-    ## The following objects are masked from 'package:stats':
-    ## 
-    ##     filter, lag
-
-    ## The following objects are masked from 'package:base':
-    ## 
-    ##     intersect, setdiff, setequal, union
-
-``` r
 BigMac2003%>%head()
 ```
 
@@ -1966,13 +1964,13 @@ here.
 atl$Time%>%hist(main="Histogram of Atl Commute Times")
 ```
 
-![](BUDA525Module1_files/figure-gfm/unnamed-chunk-77-1.png)<!-- -->
+![](BUDA525Module1_files/figure-gfm/unnamed-chunk-80-1.png)<!-- -->
 
 ``` r
 atl$Time%>%boxplot(main="Boxplot of Atl Commute Times")
 ```
 
-![](BUDA525Module1_files/figure-gfm/unnamed-chunk-77-2.png)<!-- -->
+![](BUDA525Module1_files/figure-gfm/unnamed-chunk-80-2.png)<!-- -->
 
 No we’re going to create the bootstrap sampling distribution. The idea
 is we resample and then calculate the mean directly, then store it in a
@@ -2011,7 +2009,7 @@ for(i in 1:10000){
 boots%>%hist(main="Sample Distribution for Mean Atlanta Commute Time")
 ```
 
-![](BUDA525Module1_files/figure-gfm/unnamed-chunk-78-1.png)<!-- -->
+![](BUDA525Module1_files/figure-gfm/unnamed-chunk-81-1.png)<!-- -->
 
 Looks symmetric so we’ll use both intervals anyways.
 
@@ -2081,13 +2079,13 @@ Lets look at the data again:
 atlQuickTimes%>%hist(main="Histogram of Times <= 90 Minutes")
 ```
 
-![](BUDA525Module1_files/figure-gfm/unnamed-chunk-81-1.png)<!-- -->
+![](BUDA525Module1_files/figure-gfm/unnamed-chunk-84-1.png)<!-- -->
 
 ``` r
 atlQuickTimes%>%boxplot(main="Boxplot of Times <= 90 Minutes")
 ```
 
-![](BUDA525Module1_files/figure-gfm/unnamed-chunk-81-2.png)<!-- --> Now
+![](BUDA525Module1_files/figure-gfm/unnamed-chunk-84-2.png)<!-- --> Now
 lets do the bootstrap approach
 
 ``` r
@@ -2102,7 +2100,7 @@ for(i in 1:10000){
 boots%>%hist(main="Sample Distribution for Mean Commute for times <= 90 Minutes")
 ```
 
-![](BUDA525Module1_files/figure-gfm/unnamed-chunk-82-1.png)<!-- -->
+![](BUDA525Module1_files/figure-gfm/unnamed-chunk-85-1.png)<!-- -->
 
 Finally let’s create the intervals
 
@@ -2161,7 +2159,7 @@ for(i in 1:10000){
 hist(boots, main="Sample Distribution for meanAtl - meanStl")
 ```
 
-![](BUDA525Module1_files/figure-gfm/unnamed-chunk-84-1.png)<!-- -->
+![](BUDA525Module1_files/figure-gfm/unnamed-chunk-87-1.png)<!-- -->
 
 ``` r
 quantile(boots, c(.025,.975))
@@ -2222,7 +2220,7 @@ for(i in 1:10000){
 hist(boots)
 ```
 
-![](BUDA525Module1_files/figure-gfm/unnamed-chunk-85-1.png)<!-- -->
+![](BUDA525Module1_files/figure-gfm/unnamed-chunk-88-1.png)<!-- -->
 
 ``` r
 quantile(boots, c(.025,.975))
@@ -2263,7 +2261,7 @@ boots%>%hist(main="Bootstrap of Median Prices")
 prices%>%median()%>%abline(v=., col="red", lwd=2)
 ```
 
-![](BUDA525Module1_files/figure-gfm/unnamed-chunk-86-1.png)<!-- -->
+![](BUDA525Module1_files/figure-gfm/unnamed-chunk-89-1.png)<!-- -->
 
 You want your bootstrap distribution to be reasonably symmetric around
 your original estimate. Also we want our sampling distribution to be
@@ -2464,7 +2462,7 @@ hist(randomResults)
 abline(v=originalDif, col="red", lwd=2)
 ```
 
-![](BUDA525Module1_files/figure-gfm/unnamed-chunk-90-1.png)<!-- --> The
+![](BUDA525Module1_files/figure-gfm/unnamed-chunk-93-1.png)<!-- --> The
 red mark here dictates where our data said the difference is.
 
 The p-value is the probability of being above the red line, which can be
@@ -2517,7 +2515,7 @@ with(nfl, plot(NFL_Malevolence, ZPenYds, main="Malevolence of Uniform vs Penalty
 abline(m1)
 ```
 
-![](BUDA525Module1_files/figure-gfm/unnamed-chunk-94-1.png)<!-- -->
+![](BUDA525Module1_files/figure-gfm/unnamed-chunk-97-1.png)<!-- -->
 
 Our hypothesis is
 
@@ -2544,7 +2542,7 @@ with(newData, plot(NFL_Malevolence, ZPenYds, main="Malevolence of Uniform vs Pen
 abline(m2)
 ```
 
-![](BUDA525Module1_files/figure-gfm/unnamed-chunk-96-1.png)<!-- -->
+![](BUDA525Module1_files/figure-gfm/unnamed-chunk-99-1.png)<!-- -->
 
 Now lets do it a whole bunch of times (10,000) to get our new randomized
 distributions.
@@ -2561,7 +2559,7 @@ hist(corList, main="Correlations between Penalty Yards and Uniform Malevolence")
 abline(v=sampleCor, col="red", lwd=2)
 ```
 
-![](BUDA525Module1_files/figure-gfm/unnamed-chunk-97-1.png)<!-- -->
+![](BUDA525Module1_files/figure-gfm/unnamed-chunk-100-1.png)<!-- -->
 
 Lets do a one sided test
 

@@ -5,7 +5,8 @@ output:
   github_document:
     toc: true
 always_allow_html: true
-
+editor_options: 
+  chunk_output_type: inline
 ---
 
 ```{r setup, include=FALSE}
@@ -29,6 +30,10 @@ generation, and then getting into combining this to create statistical inference
 
 ##  Introduction to R
 ### What is R?
+
+```{r, echo=FALSE}
+embed_url("https://youtu.be/0E_JQ_R8uKc")
+```
 
 R is a free statistical software that is used by both applied and research statisticians.  If this were a statistics course for
 future statisticians that would be enough, but it's not.  So why are we using R in a business statistics class?  Because 
@@ -59,6 +64,14 @@ If you look at the right hand side of the screen there are a ton of different li
  The next step is where MAC and Windows systems diverge.  Pick the system you are running on from the top of the page and follow the steps associated with it.
 
 ### Using R
+
+```{r, echo=FALSE}
+embed_url("https://youtu.be/fy8vyKPOOEI")
+```
+
+```{r, echo=FALSE}
+embed_url("https://youtu.be/R6TsYvlIw6o")
+```
 The next thing that we need to understand about R is that it is only as smart as the user, which means it will only do what you tell it to do.
 If you don't let R know what to do then it can't do it.  The best way I think we can learn R is do review what you should know from 
 previous courses and use R to do it.
@@ -147,7 +160,7 @@ If we look at this line of code a little more in depth the way we will see it is
 DATASET[ Row Number, Column Number].  So if I just wanted to view the first column of the data (corresponding
 to the variable BigMac) we would type
 ```{r cache=TRUE}
-BigMac2003[,1]
+BigMac2003[,4]
 ```
 
 Again this is just the first column of the data.  As we go on we will see more and more of how to access things in 
