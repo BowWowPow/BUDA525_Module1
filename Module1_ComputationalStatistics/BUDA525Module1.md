@@ -1519,37 +1519,7 @@ very simple you learned in a previous section:
 
 ``` r
 library(alr4)
-```
-
-    ## Loading required package: car
-
-    ## Loading required package: carData
-
-    ## Loading required package: effects
-
-    ## lattice theme set by effectsTheme()
-    ## See ?effectsTheme for details.
-
-``` r
 library(dplyr)
-```
-
-    ## 
-    ## Attaching package: 'dplyr'
-
-    ## The following object is masked from 'package:car':
-    ## 
-    ##     recode
-
-    ## The following objects are masked from 'package:stats':
-    ## 
-    ##     filter, lag
-
-    ## The following objects are masked from 'package:base':
-    ## 
-    ##     intersect, setdiff, setequal, union
-
-``` r
 BigMac2003%>%head()
 ```
 

@@ -191,6 +191,7 @@ The first thing we can do is quickly calculate the five number summaries for the
 allows us to do that.
 ```{r cache=TRUE}
 summary(BigMac2003)
+
 ```
 
 If we want to find the mean of a specific variable we can do it directly.
