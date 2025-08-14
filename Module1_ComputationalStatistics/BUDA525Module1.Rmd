@@ -4,7 +4,7 @@ author: Brad Price, Ph.D.
 output: 
   github_document:
     toc: true
-  always_allow_html: true
+always_allow_html: true
 ---
 
 ```{r setup, include=FALSE}
