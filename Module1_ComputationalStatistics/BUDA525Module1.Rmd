@@ -3,6 +3,7 @@ title: "Introduction to Satistical Computing and Computational Statistics"
 author: Brad Price, Ph.D.
 output: 
   github_document:
+    html_preview: false
     toc: true
 always_allow_html: true
 ---
