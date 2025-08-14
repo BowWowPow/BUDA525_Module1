@@ -141,6 +141,12 @@ courses and use R to do it.
 
 ### Dealing with Data in R
 
+<div class="vembedr">
+<div>
+<iframe src="https://www.youtube.com/embed/R6TsYvlIw6o" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
+</div>
+</div>
+
 Sometimes the hardest part of an analysis is simply getting the data in
 the correct format to analyze. R functions really well with many
 different data types, but one of the easiest to deal with is .csv files.
@@ -348,7 +354,7 @@ attach(BigMac2003)
 hist(TeachNI, main="Teachers Net Income (in $1000's)")
 ```
 
-![](BUDA525Module1_files/figure-gfm/unnamed-chunk-12-1.png)<!-- -->
+![](BUDA525Module1_files/figure-gfm/unnamed-chunk-13-1.png)<!-- -->
 
 To change the number of bins in the histogram we run the code:
 
@@ -356,7 +362,7 @@ To change the number of bins in the histogram we run the code:
 hist(TeachNI,breaks=15, main="Teachers Net Income (in $1000s)")
 ```
 
-![](BUDA525Module1_files/figure-gfm/unnamed-chunk-13-1.png)<!-- -->
+![](BUDA525Module1_files/figure-gfm/unnamed-chunk-14-1.png)<!-- -->
 
 In either plot we are seeing the the data has a long right tail. To do a
 box-plot we run the code:
@@ -365,7 +371,7 @@ box-plot we run the code:
 boxplot(TeachNI, main="A boxplot of Teachers Net Income (in $1000s)")
 ```
 
-![](BUDA525Module1_files/figure-gfm/unnamed-chunk-14-1.png)<!-- -->
+![](BUDA525Module1_files/figure-gfm/unnamed-chunk-15-1.png)<!-- -->
 
 Now that we are able to visualize the data we can quickly calculate
 summary statistics that we need. The first thing we can do is quickly
@@ -1958,13 +1964,13 @@ here.
 atl$Time%>%hist(main="Histogram of Atl Commute Times")
 ```
 
-![](BUDA525Module1_files/figure-gfm/unnamed-chunk-79-1.png)<!-- -->
+![](BUDA525Module1_files/figure-gfm/unnamed-chunk-80-1.png)<!-- -->
 
 ``` r
 atl$Time%>%boxplot(main="Boxplot of Atl Commute Times")
 ```
 
-![](BUDA525Module1_files/figure-gfm/unnamed-chunk-79-2.png)<!-- -->
+![](BUDA525Module1_files/figure-gfm/unnamed-chunk-80-2.png)<!-- -->
 
 No we’re going to create the bootstrap sampling distribution. The idea
 is we resample and then calculate the mean directly, then store it in a
@@ -2003,7 +2009,7 @@ for(i in 1:10000){
 boots%>%hist(main="Sample Distribution for Mean Atlanta Commute Time")
 ```
 
-![](BUDA525Module1_files/figure-gfm/unnamed-chunk-80-1.png)<!-- -->
+![](BUDA525Module1_files/figure-gfm/unnamed-chunk-81-1.png)<!-- -->
 
 Looks symmetric so we’ll use both intervals anyways.
 
@@ -2073,13 +2079,13 @@ Lets look at the data again:
 atlQuickTimes%>%hist(main="Histogram of Times <= 90 Minutes")
 ```
 
-![](BUDA525Module1_files/figure-gfm/unnamed-chunk-83-1.png)<!-- -->
+![](BUDA525Module1_files/figure-gfm/unnamed-chunk-84-1.png)<!-- -->
 
 ``` r
 atlQuickTimes%>%boxplot(main="Boxplot of Times <= 90 Minutes")
 ```
 
-![](BUDA525Module1_files/figure-gfm/unnamed-chunk-83-2.png)<!-- --> Now
+![](BUDA525Module1_files/figure-gfm/unnamed-chunk-84-2.png)<!-- --> Now
 lets do the bootstrap approach
 
 ``` r
@@ -2094,7 +2100,7 @@ for(i in 1:10000){
 boots%>%hist(main="Sample Distribution for Mean Commute for times <= 90 Minutes")
 ```
 
-![](BUDA525Module1_files/figure-gfm/unnamed-chunk-84-1.png)<!-- -->
+![](BUDA525Module1_files/figure-gfm/unnamed-chunk-85-1.png)<!-- -->
 
 Finally let’s create the intervals
 
@@ -2153,7 +2159,7 @@ for(i in 1:10000){
 hist(boots, main="Sample Distribution for meanAtl - meanStl")
 ```
 
-![](BUDA525Module1_files/figure-gfm/unnamed-chunk-86-1.png)<!-- -->
+![](BUDA525Module1_files/figure-gfm/unnamed-chunk-87-1.png)<!-- -->
 
 ``` r
 quantile(boots, c(.025,.975))
@@ -2214,7 +2220,7 @@ for(i in 1:10000){
 hist(boots)
 ```
 
-![](BUDA525Module1_files/figure-gfm/unnamed-chunk-87-1.png)<!-- -->
+![](BUDA525Module1_files/figure-gfm/unnamed-chunk-88-1.png)<!-- -->
 
 ``` r
 quantile(boots, c(.025,.975))
@@ -2255,7 +2261,7 @@ boots%>%hist(main="Bootstrap of Median Prices")
 prices%>%median()%>%abline(v=., col="red", lwd=2)
 ```
 
-![](BUDA525Module1_files/figure-gfm/unnamed-chunk-88-1.png)<!-- -->
+![](BUDA525Module1_files/figure-gfm/unnamed-chunk-89-1.png)<!-- -->
 
 You want your bootstrap distribution to be reasonably symmetric around
 your original estimate. Also we want our sampling distribution to be
@@ -2456,7 +2462,7 @@ hist(randomResults)
 abline(v=originalDif, col="red", lwd=2)
 ```
 
-![](BUDA525Module1_files/figure-gfm/unnamed-chunk-92-1.png)<!-- --> The
+![](BUDA525Module1_files/figure-gfm/unnamed-chunk-93-1.png)<!-- --> The
 red mark here dictates where our data said the difference is.
 
 The p-value is the probability of being above the red line, which can be
@@ -2509,7 +2515,7 @@ with(nfl, plot(NFL_Malevolence, ZPenYds, main="Malevolence of Uniform vs Penalty
 abline(m1)
 ```
 
-![](BUDA525Module1_files/figure-gfm/unnamed-chunk-96-1.png)<!-- -->
+![](BUDA525Module1_files/figure-gfm/unnamed-chunk-97-1.png)<!-- -->
 
 Our hypothesis is
 
@@ -2536,7 +2542,7 @@ with(newData, plot(NFL_Malevolence, ZPenYds, main="Malevolence of Uniform vs Pen
 abline(m2)
 ```
 
-![](BUDA525Module1_files/figure-gfm/unnamed-chunk-98-1.png)<!-- -->
+![](BUDA525Module1_files/figure-gfm/unnamed-chunk-99-1.png)<!-- -->
 
 Now lets do it a whole bunch of times (10,000) to get our new randomized
 distributions.
@@ -2553,7 +2559,7 @@ hist(corList, main="Correlations between Penalty Yards and Uniform Malevolence")
 abline(v=sampleCor, col="red", lwd=2)
 ```
 
-![](BUDA525Module1_files/figure-gfm/unnamed-chunk-99-1.png)<!-- -->
+![](BUDA525Module1_files/figure-gfm/unnamed-chunk-100-1.png)<!-- -->
 
 Lets do a one sided test
 
