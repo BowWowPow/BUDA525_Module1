@@ -69,15 +69,15 @@ If you look at the right hand side of the screen there are a ton of different li
 embed_url("https://youtu.be/fy8vyKPOOEI")
 ```
 
-```{r, echo=FALSE}
-embed_url("https://youtu.be/R6TsYvlIw6o")
-```
+
 The next thing that we need to understand about R is that it is only as smart as the user, which means it will only do what you tell it to do.
 If you don't let R know what to do then it can't do it.  The best way I think we can learn R is do review what you should know from 
 previous courses and use R to do it.
 
 ### Dealing with Data in R
-
+```{r, echo=FALSE}
+embed_url("https://youtu.be/R6TsYvlIw6o")
+```
 Sometimes the hardest part of an analysis is simply getting the data in the correct format to analyze.  R functions really well with many different
 data types, but one of the easiest to deal with is .csv files.  The reason we like .csv files so much is that we can save any Excel file as a .csv, all you need to do is
  change the file type (File> Save as> Save as type then select .csv).  Before doing this make sure all formatting is removed.  R doesn't care if something is in 

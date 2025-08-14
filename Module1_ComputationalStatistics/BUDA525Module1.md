@@ -133,12 +133,6 @@ associated with it.
 </div>
 </div>
 
-<div class="vembedr">
-<div>
-<iframe src="https://www.youtube.com/embed/R6TsYvlIw6o" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
-</div>
-</div>
-
 The next thing that we need to understand about R is that it is only as
 smart as the user, which means it will only do what you tell it to do.
 If you don’t let R know what to do then it can’t do it. The best way I
@@ -146,6 +140,12 @@ think we can learn R is do review what you should know from previous
 courses and use R to do it.
 
 ### Dealing with Data in R
+
+<div class="vembedr">
+<div>
+<iframe src="https://www.youtube.com/embed/R6TsYvlIw6o" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
+</div>
+</div>
 
 Sometimes the hardest part of an analysis is simply getting the data in
 the correct format to analyze. R functions really well with many
@@ -1519,7 +1519,37 @@ very simple you learned in a previous section:
 
 ``` r
 library(alr4)
+```
+
+    ## Loading required package: car
+
+    ## Loading required package: carData
+
+    ## Loading required package: effects
+
+    ## lattice theme set by effectsTheme()
+    ## See ?effectsTheme for details.
+
+``` r
 library(dplyr)
+```
+
+    ## 
+    ## Attaching package: 'dplyr'
+
+    ## The following object is masked from 'package:car':
+    ## 
+    ##     recode
+
+    ## The following objects are masked from 'package:stats':
+    ## 
+    ##     filter, lag
+
+    ## The following objects are masked from 'package:base':
+    ## 
+    ##     intersect, setdiff, setequal, union
+
+``` r
 BigMac2003%>%head()
 ```
 
