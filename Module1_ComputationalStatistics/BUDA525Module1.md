@@ -1826,6 +1826,11 @@ to begin your journey. Notice we can use any of these anytime.
 
 ## Bootstrap
 
+<div class="vembedr">
+<div>
+<iframe src="https://www.youtube.com/embed/https://youtu.be/FJuvD9d3LGU" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
+</div>
+</div>
 Statistical inference the process of drawing conclusions about the
 entire population based on the information in the sample. The whole
 ideas is we want to use statistics from our sample to make estimates
@@ -1964,8 +1969,8 @@ number of bootstraps we want to do.
 Now you have a list of bootstrap estimates
 
 $$
-B_{\mbox{List}} = \left( B_1, ...., B_k\right) \mbox{ or re-order to get} \\
-B_{\mbox{Ordered List}} = \left( B_{(1)},..., B_{(k)}\right),
+B_{List} = \left( B_1, ...., B_k\right) \mbox{ or re-order to get} \\
+B_{Ordered List} = \left( B_{(1)},..., B_{(k)}\right),
 $$ where $B_{(1)}$ is the minimum and $B_{(k)}$ is the maximum of the
 statistics.  
 Note this whole procedure depends on your original sample and the
@@ -2035,13 +2040,13 @@ here.
 atl$Time%>%hist(main="Histogram of Atl Commute Times")
 ```
 
-![](BUDA525Module1_files/figure-gfm/unnamed-chunk-88-1.png)<!-- -->
+![](BUDA525Module1_files/figure-gfm/unnamed-chunk-89-1.png)<!-- -->
 
 ``` r
 atl$Time%>%boxplot(main="Boxplot of Atl Commute Times")
 ```
 
-![](BUDA525Module1_files/figure-gfm/unnamed-chunk-88-2.png)<!-- -->
+![](BUDA525Module1_files/figure-gfm/unnamed-chunk-89-2.png)<!-- -->
 
 No we’re going to create the bootstrap sampling distribution. The idea
 is we resample and then calculate the mean directly, then store it in a
@@ -2080,7 +2085,7 @@ for(i in 1:10000){
 boots%>%hist(main="Sample Distribution for Mean Atlanta Commute Time")
 ```
 
-![](BUDA525Module1_files/figure-gfm/unnamed-chunk-89-1.png)<!-- -->
+![](BUDA525Module1_files/figure-gfm/unnamed-chunk-90-1.png)<!-- -->
 
 Looks symmetric so we’ll use both intervals anyways.
 
@@ -2150,13 +2155,13 @@ Lets look at the data again:
 atlQuickTimes%>%hist(main="Histogram of Times <= 90 Minutes")
 ```
 
-![](BUDA525Module1_files/figure-gfm/unnamed-chunk-92-1.png)<!-- -->
+![](BUDA525Module1_files/figure-gfm/unnamed-chunk-93-1.png)<!-- -->
 
 ``` r
 atlQuickTimes%>%boxplot(main="Boxplot of Times <= 90 Minutes")
 ```
 
-![](BUDA525Module1_files/figure-gfm/unnamed-chunk-92-2.png)<!-- --> Now
+![](BUDA525Module1_files/figure-gfm/unnamed-chunk-93-2.png)<!-- --> Now
 lets do the bootstrap approach
 
 ``` r
@@ -2171,7 +2176,7 @@ for(i in 1:10000){
 boots%>%hist(main="Sample Distribution for Mean Commute for times <= 90 Minutes")
 ```
 
-![](BUDA525Module1_files/figure-gfm/unnamed-chunk-93-1.png)<!-- -->
+![](BUDA525Module1_files/figure-gfm/unnamed-chunk-94-1.png)<!-- -->
 
 Finally let’s create the intervals
 
@@ -2230,7 +2235,7 @@ for(i in 1:10000){
 hist(boots, main="Sample Distribution for meanAtl - meanStl")
 ```
 
-![](BUDA525Module1_files/figure-gfm/unnamed-chunk-95-1.png)<!-- -->
+![](BUDA525Module1_files/figure-gfm/unnamed-chunk-96-1.png)<!-- -->
 
 ``` r
 quantile(boots, c(.025,.975))
@@ -2291,7 +2296,7 @@ for(i in 1:10000){
 hist(boots)
 ```
 
-![](BUDA525Module1_files/figure-gfm/unnamed-chunk-96-1.png)<!-- -->
+![](BUDA525Module1_files/figure-gfm/unnamed-chunk-97-1.png)<!-- -->
 
 ``` r
 quantile(boots, c(.025,.975))
@@ -2332,7 +2337,7 @@ boots%>%hist(main="Bootstrap of Median Prices")
 prices%>%median()%>%abline(v=., col="red", lwd=2)
 ```
 
-![](BUDA525Module1_files/figure-gfm/unnamed-chunk-97-1.png)<!-- -->
+![](BUDA525Module1_files/figure-gfm/unnamed-chunk-98-1.png)<!-- -->
 
 You want your bootstrap distribution to be reasonably symmetric around
 your original estimate. Also we want our sampling distribution to be
@@ -2533,7 +2538,7 @@ hist(randomResults)
 abline(v=originalDif, col="red", lwd=2)
 ```
 
-![](BUDA525Module1_files/figure-gfm/unnamed-chunk-101-1.png)<!-- --> The
+![](BUDA525Module1_files/figure-gfm/unnamed-chunk-102-1.png)<!-- --> The
 red mark here dictates where our data said the difference is.
 
 The p-value is the probability of being above the red line, which can be
@@ -2586,7 +2591,7 @@ with(nfl, plot(NFL_Malevolence, ZPenYds, main="Malevolence of Uniform vs Penalty
 abline(m1)
 ```
 
-![](BUDA525Module1_files/figure-gfm/unnamed-chunk-105-1.png)<!-- -->
+![](BUDA525Module1_files/figure-gfm/unnamed-chunk-106-1.png)<!-- -->
 
 Our hypothesis is
 
@@ -2613,7 +2618,7 @@ with(newData, plot(NFL_Malevolence, ZPenYds, main="Malevolence of Uniform vs Pen
 abline(m2)
 ```
 
-![](BUDA525Module1_files/figure-gfm/unnamed-chunk-107-1.png)<!-- -->
+![](BUDA525Module1_files/figure-gfm/unnamed-chunk-108-1.png)<!-- -->
 
 Now lets do it a whole bunch of times (10,000) to get our new randomized
 distributions.
@@ -2630,7 +2635,7 @@ hist(corList, main="Correlations between Penalty Yards and Uniform Malevolence")
 abline(v=sampleCor, col="red", lwd=2)
 ```
 
-![](BUDA525Module1_files/figure-gfm/unnamed-chunk-108-1.png)<!-- -->
+![](BUDA525Module1_files/figure-gfm/unnamed-chunk-109-1.png)<!-- -->
 
 Lets do a one sided test
 
