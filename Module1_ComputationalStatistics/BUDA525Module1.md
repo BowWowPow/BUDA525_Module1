@@ -21,6 +21,7 @@ Brad Price, Ph.D.
   - [Why Generate Numbers Randomly](#why-generate-numbers-randomly)
   - [Generating Data from a Probability
     Distribution](#generating-data-from-a-probability-distribution)
+- [The Apply Functions](#the-apply-functions)
   - [`apply` Function}](#apply-function)
   - [`tapply` Function}](#tapply-function)
 - [`for`, `if`, `while` Statements](#for-if-while-statements)
@@ -1036,6 +1037,16 @@ will react to it.
 
 ## Random Number Generation in R
 
+``` r
+embed_youtube("https://youtu.be/yGRb_dGmhLY")
+```
+
+<div class="vembedr">
+<div>
+<iframe src="https://www.youtube.com/embed/https://youtu.be/yGRb_dGmhLY" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
+</div>
+</div>
+
 ### Why Generate Numbers Randomly
 
 In statistics we discuss and try to understand variation in our data.
@@ -1200,7 +1211,7 @@ the result is probably consistent. You’ll see this used all across your
 statistics and data mining courses, so it is important that you
 understand this fundamental concept.
 
-\##The Apply Functions
+## The Apply Functions
 
 In R we typically work with data frames, which we can think of as a list
 that reports like a matrix, or an excel file that you see. You can also
@@ -1559,37 +1570,7 @@ very simple you learned in a previous section:
 
 ``` r
 library(alr4)
-```
-
-    ## Loading required package: car
-
-    ## Loading required package: carData
-
-    ## Loading required package: effects
-
-    ## lattice theme set by effectsTheme()
-    ## See ?effectsTheme for details.
-
-``` r
 library(dplyr)
-```
-
-    ## 
-    ## Attaching package: 'dplyr'
-
-    ## The following object is masked from 'package:car':
-    ## 
-    ##     recode
-
-    ## The following objects are masked from 'package:stats':
-    ## 
-    ##     filter, lag
-
-    ## The following objects are masked from 'package:base':
-    ## 
-    ##     intersect, setdiff, setequal, union
-
-``` r
 BigMac2003%>%head()
 ```
 
@@ -2026,13 +2007,13 @@ here.
 atl$Time%>%hist(main="Histogram of Atl Commute Times")
 ```
 
-![](BUDA525Module1_files/figure-gfm/unnamed-chunk-84-1.png)<!-- -->
+![](BUDA525Module1_files/figure-gfm/unnamed-chunk-85-1.png)<!-- -->
 
 ``` r
 atl$Time%>%boxplot(main="Boxplot of Atl Commute Times")
 ```
 
-![](BUDA525Module1_files/figure-gfm/unnamed-chunk-84-2.png)<!-- -->
+![](BUDA525Module1_files/figure-gfm/unnamed-chunk-85-2.png)<!-- -->
 
 No we’re going to create the bootstrap sampling distribution. The idea
 is we resample and then calculate the mean directly, then store it in a
@@ -2071,7 +2052,7 @@ for(i in 1:10000){
 boots%>%hist(main="Sample Distribution for Mean Atlanta Commute Time")
 ```
 
-![](BUDA525Module1_files/figure-gfm/unnamed-chunk-85-1.png)<!-- -->
+![](BUDA525Module1_files/figure-gfm/unnamed-chunk-86-1.png)<!-- -->
 
 Looks symmetric so we’ll use both intervals anyways.
 
@@ -2141,13 +2122,13 @@ Lets look at the data again:
 atlQuickTimes%>%hist(main="Histogram of Times <= 90 Minutes")
 ```
 
-![](BUDA525Module1_files/figure-gfm/unnamed-chunk-88-1.png)<!-- -->
+![](BUDA525Module1_files/figure-gfm/unnamed-chunk-89-1.png)<!-- -->
 
 ``` r
 atlQuickTimes%>%boxplot(main="Boxplot of Times <= 90 Minutes")
 ```
 
-![](BUDA525Module1_files/figure-gfm/unnamed-chunk-88-2.png)<!-- --> Now
+![](BUDA525Module1_files/figure-gfm/unnamed-chunk-89-2.png)<!-- --> Now
 lets do the bootstrap approach
 
 ``` r
@@ -2162,7 +2143,7 @@ for(i in 1:10000){
 boots%>%hist(main="Sample Distribution for Mean Commute for times <= 90 Minutes")
 ```
 
-![](BUDA525Module1_files/figure-gfm/unnamed-chunk-89-1.png)<!-- -->
+![](BUDA525Module1_files/figure-gfm/unnamed-chunk-90-1.png)<!-- -->
 
 Finally let’s create the intervals
 
@@ -2221,7 +2202,7 @@ for(i in 1:10000){
 hist(boots, main="Sample Distribution for meanAtl - meanStl")
 ```
 
-![](BUDA525Module1_files/figure-gfm/unnamed-chunk-91-1.png)<!-- -->
+![](BUDA525Module1_files/figure-gfm/unnamed-chunk-92-1.png)<!-- -->
 
 ``` r
 quantile(boots, c(.025,.975))
@@ -2282,7 +2263,7 @@ for(i in 1:10000){
 hist(boots)
 ```
 
-![](BUDA525Module1_files/figure-gfm/unnamed-chunk-92-1.png)<!-- -->
+![](BUDA525Module1_files/figure-gfm/unnamed-chunk-93-1.png)<!-- -->
 
 ``` r
 quantile(boots, c(.025,.975))
@@ -2323,7 +2304,7 @@ boots%>%hist(main="Bootstrap of Median Prices")
 prices%>%median()%>%abline(v=., col="red", lwd=2)
 ```
 
-![](BUDA525Module1_files/figure-gfm/unnamed-chunk-93-1.png)<!-- -->
+![](BUDA525Module1_files/figure-gfm/unnamed-chunk-94-1.png)<!-- -->
 
 You want your bootstrap distribution to be reasonably symmetric around
 your original estimate. Also we want our sampling distribution to be
@@ -2524,7 +2505,7 @@ hist(randomResults)
 abline(v=originalDif, col="red", lwd=2)
 ```
 
-![](BUDA525Module1_files/figure-gfm/unnamed-chunk-97-1.png)<!-- --> The
+![](BUDA525Module1_files/figure-gfm/unnamed-chunk-98-1.png)<!-- --> The
 red mark here dictates where our data said the difference is.
 
 The p-value is the probability of being above the red line, which can be
@@ -2577,7 +2558,7 @@ with(nfl, plot(NFL_Malevolence, ZPenYds, main="Malevolence of Uniform vs Penalty
 abline(m1)
 ```
 
-![](BUDA525Module1_files/figure-gfm/unnamed-chunk-101-1.png)<!-- -->
+![](BUDA525Module1_files/figure-gfm/unnamed-chunk-102-1.png)<!-- -->
 
 Our hypothesis is
 
@@ -2604,7 +2585,7 @@ with(newData, plot(NFL_Malevolence, ZPenYds, main="Malevolence of Uniform vs Pen
 abline(m2)
 ```
 
-![](BUDA525Module1_files/figure-gfm/unnamed-chunk-103-1.png)<!-- -->
+![](BUDA525Module1_files/figure-gfm/unnamed-chunk-104-1.png)<!-- -->
 
 Now lets do it a whole bunch of times (10,000) to get our new randomized
 distributions.
@@ -2621,7 +2602,7 @@ hist(corList, main="Correlations between Penalty Yards and Uniform Malevolence")
 abline(v=sampleCor, col="red", lwd=2)
 ```
 
-![](BUDA525Module1_files/figure-gfm/unnamed-chunk-104-1.png)<!-- -->
+![](BUDA525Module1_files/figure-gfm/unnamed-chunk-105-1.png)<!-- -->
 
 Lets do a one sided test
 

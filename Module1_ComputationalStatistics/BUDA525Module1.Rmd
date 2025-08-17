@@ -524,6 +524,9 @@ missing data is and how your code will react to it.
 
 ## Random Number Generation in R
 
+```{r}
+embed_youtube("https://youtu.be/yGRb_dGmhLY")
+```
 ### Why Generate Numbers Randomly
 In statistics we discuss and try to understand variation in our data.  The hope is part of that variation can be explained by some factor or
 variable we already know, but once that is accounted for we still have randomness that needs understood.  Randomly generating numbers 
@@ -618,7 +621,7 @@ different sets of random numbers the result is probably consistent.  You'll see 
 concept.  
 
 
-##The Apply Functions
+## The Apply Functions
 
 In R we typically work with data frames, which we can think of as a list that reports like a matrix, or an excel file that you see.  You can also think of it as multiple vectors where each
 element of the vector corresponds to the same observations in the data (i.e. The first data point in the first and
