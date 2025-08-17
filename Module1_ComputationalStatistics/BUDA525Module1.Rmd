@@ -1224,10 +1224,8 @@ $$
 
 Lets look at a quick example, let's say that a friend claims to be able to predict whether a stock will go up or down on a daily basis.  We would evaluate that as they can pick better than 50% of the time.
 The idea is we'd want to say that the person predicts better than a random guess.  So the hypotheses become
-$$
-H_0: p \leq  1/2 \mbox{ Random chance} \\
-H_A: p > 1/2 \mbox{ Better then random chance}
-$$
+$H_0: p \leq  1/2$=Random chance
+$H_A: p > 1/2$=Better then random chance
 
 Two possible actions:
 
