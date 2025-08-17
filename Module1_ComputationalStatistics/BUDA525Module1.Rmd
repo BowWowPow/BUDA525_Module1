@@ -167,6 +167,11 @@ Again this is just the first column of the data.  As we go on we will see more a
 `R`, but the most important thing is to understand these basic data manipulation tools.
 
 ### Basic Statistical Method
+
+```{r}
+embed_youtube("https://youtu.be/KjwCl4oPkj0")
+```
+
 We know that R isn't just used for looking at data sets (could do that much better in excel) but 
 how does it work as a stats tool.  The first thing we should always do is look at a histogram of our data, in this 
 case we are going to look at teachers net income (TeachNI) using a histogram and a box-plot.
@@ -212,12 +217,15 @@ var(TeachNI)
 
 ### Calculating P-Values and Quantiles in R
 
+```{r}
+embed_youtube("https://youtu.be/lStLqjyzKNo")
+```
 Summary statistics are great, and give us ideas about what is happening with our data, but at the end of it we will actually want
 to do some inference.  We need to be able to calculate confidence intervals and report the results of hypothesis tests.  
-In some classes this is taught using charts or tables.  For our purposes (since this is a review we are going to discuss 
+In some classes this is taught using charts or tables.  For our purposes (since this is a review) we are going to discuss 
 calculating probabilities and quantiles from normal and t-distributions.  
 
-Specifically, R allows us to approximate $P(X < x^*)$ for any value $x^*$ where $X \sim N(\mu,\sigma)$ using the function 
+Specifically, R allows us to approximate $$P(X < x^*)$$ for any value $$x^*$$ where $X \sim N(\mu,\sigma)$ using the function 
 ```{r eval=FALSE}
 pnorm(q, mean=0,sd=1,lower.tail=TRUE)
 qnorm(p,mean=0,sd=1,lower.tail=TRUE)
@@ -352,6 +360,10 @@ There are many types of classes, and most relate to certain packages or types of
 
 ### Data Types
 
+```{r}
+embed_youtube("https://youtu.be/xZq3RienLgg")
+```
+
 We have already seen many data types in R but just haven't refereed to them in detail. The basics are
 
 * Numeric
@@ -460,6 +472,11 @@ of functions, that do more than simple calculations, in R is a list.  We'll lear
 
 
 ### Missing Values in R
+
+```{r}
+embed_youtube("https://youtu.be/TRz8LSCQvDA")
+```
+
 One of the most important and troubling pieces of working with data is working with missing data.  What do you do
 when your data set is incomplete?  How can you deal with it?  How should you deal with it?  As in everything else
 with data there is a difference between ideal and reality.  Ideally we wouldn't have missing data, we wouldn't have 
