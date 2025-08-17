@@ -1968,11 +1968,9 @@ number of bootstraps we want to do.
 
 Now you have a list of bootstrap estimates
 
-$$
-B_{List} = \left( B_1, ...., B_k\right) \mbox{ or re-order to get} \\
-B_{Ordered List} = \left( B_{(1)},..., B_{(k)}\right),
-$$ where $B_{(1)}$ is the minimum and $B_{(k)}$ is the maximum of the
-statistics.  
+$B_{List} = \left( B_1, ...., B_k\right)$ or re-order to get
+$B_{Ordered List} = \left( B_{(1)},..., B_{(k)}\right),$ where $B_{(1)}$
+is the minimum and $B_{(k)}$ is the maximum of the statistics.  
 Note this whole procedure depends on your original sample and the
 statistic you’re trying to bootstrap. Simple problem k = 10,000 takes a
 couple of seconds. Complicated problem k = 1,000 takes a day.
