@@ -623,6 +623,10 @@ concept.
 
 ## The Apply Functions
 
+```{r}
+embed_url("https://youtu.be/edIeyRjippo")
+```
+
 In R we typically work with data frames, which we can think of as a list that reports like a matrix, or an excel file that you see.  You can also think of it as multiple vectors where each
 element of the vector corresponds to the same observations in the data (i.e. The first data point in the first and
 second vector are describing an attribute of the same person).  We have previously discussed simple ways of subsetting
@@ -742,6 +746,9 @@ You'll need to have all of this to work through the computational methods we wil
 
 ## `for`, `if`, `while` Statements
 
+```{r}
+embed_youtube("https://youtu.be/wgjye9-qk-g")
+```
 Up to this point we have just accessed data, and understand the data types we want.  What if we want to
 design a matrix with a specific structure.  For instance if we want to create what is known as an Auto Regressive
 1 correlation structure denoted as $AR_\rho(1)$ the $i,j$th element of the matrix we need to use a for loop. 
@@ -815,6 +822,10 @@ OR conditional statement we use`|`.  It works comparing a single statement or en
 
 
 ## Introduction to the Tidyverse and the Pipe Operator
+
+```{r}
+embed_youtube("https://youtu.be/xCHldkFtERQ")
+```
 
 Now that we understand some of the basics in R let's start looking at some of the modern developments in R.  The "Tidyverse" as it is known are a set of packages that allow for a more simplistic workflow.  One of the main operators we're going to look at in this case ins the ` %>% ` operator which is known as the pipe operator, also known as the forward pipe operator.  What this operator does is 
 take the proceeding element and feed into the following function.  Let's take a look at something very simple
