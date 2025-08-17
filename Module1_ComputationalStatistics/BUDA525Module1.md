@@ -41,6 +41,7 @@ Brad Price, Ph.D.
   - [Caution on Using Bootstrap](#caution-on-using-bootstrap)
 - [Randomized Distributons](#randomized-distributons)
 - [Hypotheses Testing](#hypotheses-testing)
+  - [Comparing Two Means](#comparing-two-means)
   - [Correlation Example](#correlation-example)
 
 ## Introduction to Statistical Computing and Computational Statistics
@@ -2412,11 +2413,13 @@ output later in this course).
 
 Power also will increase with sample size.
 
-Comparing Two Means Say we did an experiment comparing two marketing
-initiatives. We performed an experiment on 10 similar products where the
-strategy was randomly assigned 5 products used machine learning aided
-strategies and 5 used human recommended strategies. We got the following
-profit results in thousands of dollars.
+### Comparing Two Means
+
+Say we did an experiment comparing two marketing initiatives. We
+performed an experiment on 10 similar products where the strategy was
+randomly assigned 5 products used machine learning aided strategies and
+5 used human recommended strategies. We got the following profit results
+in thousands of dollars.
 
 | Human Aided | ML Aided |
 |-------------|----------|
