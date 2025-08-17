@@ -8,7 +8,7 @@ Brad Price, Ph.D.
   - [What is R?](#what-is-r)
   - [Using R](#using-r)
   - [Dealing with Data in R](#dealing-with-data-in-r)
-  - [Basic Statistical Method](#basic-statistical-method)
+  - [Basic Statistical Methods](#basic-statistical-methods)
   - [Calculating P-Values and Quantiles in
     R](#calculating-p-values-and-quantiles-in-r)
 - [Data in R](#data-in-r)
@@ -334,11 +334,7 @@ Again this is just the first column of the data. As we go on we will see
 more and more of how to access things in `R`, but the most important
 thing is to understand these basic data manipulation tools.
 
-### Basic Statistical Method
-
-``` r
-embed_youtube("https://youtu.be/KjwCl4oPkj0")
-```
+### Basic Statistical Methods
 
 <div class="vembedr">
 <div>
@@ -441,10 +437,6 @@ var(TeachNI)
     ## [1] 198.1411
 
 ### Calculating P-Values and Quantiles in R
-
-``` r
-embed_youtube("https://youtu.be/lStLqjyzKNo")
-```
 
 <div class="vembedr">
 <div>
@@ -691,10 +683,6 @@ packages.
 
 ### Data Types
 
-``` r
-embed_youtube("https://youtu.be/xZq3RienLgg")
-```
-
 <div class="vembedr">
 <div>
 <iframe src="https://www.youtube.com/embed/https://youtu.be/xZq3RienLgg" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
@@ -913,10 +901,6 @@ a list. We’ll learn later how to write functions and access the output.
 
 ### Missing Values in R
 
-``` r
-embed_youtube("https://youtu.be/TRz8LSCQvDA")
-```
-
 <div class="vembedr">
 <div>
 <iframe src="https://www.youtube.com/embed/https://youtu.be/TRz8LSCQvDA" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
@@ -1036,10 +1020,6 @@ important to understand where your missing data is and how your code
 will react to it.
 
 ## Random Number Generation in R
-
-``` r
-embed_youtube("https://youtu.be/yGRb_dGmhLY")
-```
 
 <div class="vembedr">
 <div>
@@ -1212,10 +1192,6 @@ statistics and data mining courses, so it is important that you
 understand this fundamental concept.
 
 ## The Apply Functions
-
-``` r
-embed_url("https://youtu.be/edIeyRjippo")
-```
 
 <div class="vembedr">
 <div>
@@ -1447,10 +1423,6 @@ methods we will discuss.
 
 ## `for`, `if`, `while` Statements
 
-``` r
-embed_youtube("https://youtu.be/wgjye9-qk-g")
-```
-
 <div class="vembedr">
 <div>
 <iframe src="https://www.youtube.com/embed/https://youtu.be/wgjye9-qk-g" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
@@ -1579,10 +1551,6 @@ comparing a single statement or entire vectors.
 
 ## Introduction to the Tidyverse and the Pipe Operator
 
-``` r
-embed_youtube("https://youtu.be/xCHldkFtERQ")
-```
-
 <div class="vembedr">
 <div>
 <iframe src="https://www.youtube.com/embed/https://youtu.be/xCHldkFtERQ" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
@@ -1600,7 +1568,37 @@ very simple you learned in a previous section:
 
 ``` r
 library(alr4)
+```
+
+    ## Loading required package: car
+
+    ## Loading required package: carData
+
+    ## Loading required package: effects
+
+    ## lattice theme set by effectsTheme()
+    ## See ?effectsTheme for details.
+
+``` r
 library(dplyr)
+```
+
+    ## 
+    ## Attaching package: 'dplyr'
+
+    ## The following object is masked from 'package:car':
+    ## 
+    ##     recode
+
+    ## The following objects are masked from 'package:stats':
+    ## 
+    ##     filter, lag
+
+    ## The following objects are masked from 'package:base':
+    ## 
+    ##     intersect, setdiff, setequal, union
+
+``` r
 BigMac2003%>%head()
 ```
 

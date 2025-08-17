@@ -166,9 +166,9 @@ BigMac2003[,4]
 Again this is just the first column of the data.  As we go on we will see more and more of how to access things in 
 `R`, but the most important thing is to understand these basic data manipulation tools.
 
-### Basic Statistical Method
+### Basic Statistical Methods
 
-```{r}
+```{r, echo=FALSE}
 embed_youtube("https://youtu.be/KjwCl4oPkj0")
 ```
 
@@ -217,7 +217,7 @@ var(TeachNI)
 
 ### Calculating P-Values and Quantiles in R
 
-```{r}
+```{r, echo=FALSE}
 embed_youtube("https://youtu.be/lStLqjyzKNo")
 ```
 Summary statistics are great, and give us ideas about what is happening with our data, but at the end of it we will actually want
@@ -360,7 +360,7 @@ There are many types of classes, and most relate to certain packages or types of
 
 ### Data Types
 
-```{r}
+```{r, echo=FALSE}
 embed_youtube("https://youtu.be/xZq3RienLgg")
 ```
 
@@ -473,7 +473,7 @@ of functions, that do more than simple calculations, in R is a list.  We'll lear
 
 ### Missing Values in R
 
-```{r}
+```{r, echo=FALSE}
 embed_youtube("https://youtu.be/TRz8LSCQvDA")
 ```
 
@@ -524,7 +524,7 @@ missing data is and how your code will react to it.
 
 ## Random Number Generation in R
 
-```{r}
+```{r, echo=FALSE}
 embed_youtube("https://youtu.be/yGRb_dGmhLY")
 ```
 ### Why Generate Numbers Randomly
@@ -623,7 +623,7 @@ concept.
 
 ## The Apply Functions
 
-```{r}
+```{r, echo=FALSE}
 embed_url("https://youtu.be/edIeyRjippo")
 ```
 
@@ -746,7 +746,7 @@ You'll need to have all of this to work through the computational methods we wil
 
 ## `for`, `if`, `while` Statements
 
-```{r}
+```{r, echo=FALSE}
 embed_youtube("https://youtu.be/wgjye9-qk-g")
 ```
 Up to this point we have just accessed data, and understand the data types we want.  What if we want to
@@ -823,7 +823,7 @@ OR conditional statement we use`|`.  It works comparing a single statement or en
 
 ## Introduction to the Tidyverse and the Pipe Operator
 
-```{r}
+```{r, echo=FALSE}
 embed_youtube("https://youtu.be/xCHldkFtERQ")
 ```
 
