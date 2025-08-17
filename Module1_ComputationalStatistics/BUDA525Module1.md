@@ -1066,7 +1066,7 @@ in the sample. How would we do this in `R` ? What is the mathematical
 question even?
 
 The mathematical question is where we start. We want to randomly sample
-5 numbers without replacement of the set $\[1,2,\ldots,20\}$, where each
+5 numbers without replacement of the set $\{1,2,\ldots,20\}$, where each
 number is sampled with equal probability. Remember without replacement
 means once a number is selected it can not be selected again. To do this
 in R we use the `sample` function which has arguments of `x`, which is
@@ -1559,7 +1559,37 @@ very simple you learned in a previous section:
 
 ``` r
 library(alr4)
+```
+
+    ## Loading required package: car
+
+    ## Loading required package: carData
+
+    ## Loading required package: effects
+
+    ## lattice theme set by effectsTheme()
+    ## See ?effectsTheme for details.
+
+``` r
 library(dplyr)
+```
+
+    ## 
+    ## Attaching package: 'dplyr'
+
+    ## The following object is masked from 'package:car':
+    ## 
+    ##     recode
+
+    ## The following objects are masked from 'package:stats':
+    ## 
+    ##     filter, lag
+
+    ## The following objects are masked from 'package:base':
+    ## 
+    ##     intersect, setdiff, setequal, union
+
+``` r
 BigMac2003%>%head()
 ```
 

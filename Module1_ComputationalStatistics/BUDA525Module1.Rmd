@@ -544,7 +544,7 @@ For us we really need to understand how to do three things (for right now)
 Let's say we want to randomly sample 5 numbers from the the numbers $\{1,2,3,\ldots,20\}$, and any number can only show up at most one
 time in the sample.  How would we do this in `R` ?  What is the mathematical question even?
 
-The mathematical question is where we start.  We want to randomly sample 5 numbers without replacement of the set $\[1,2,\ldots,20\}$,
+The mathematical question is where we start.  We want to randomly sample 5 numbers without replacement of the set $\{1,2,\ldots,20\}$,
 where each number is sampled with equal probability.  Remember without replacement means once a number is selected it can not be selected
 again.  To do this in R we use the `sample` function which has arguments of `x`, which is the set we want to sample,
 `size`, which is the number of point we want to return, and `replace` which is a logical statement (`TRUE` or `FALSE`)
