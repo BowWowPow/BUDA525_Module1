@@ -1156,7 +1156,7 @@ In this case the two samples size were both 500 while this is preferred this doe
 
 What is our interpretation of the confidence interval using the statistics above?   
 
-\subsection{SAT Scores}
+### SAT Scores
 Lets say we want to compare the difference in the averages of SAT scores for men and women.  Notice in this example we don't have the same number of me and women observed in our sample.  Which is ok, our sampling plan/bootstrap statistics take this into consideration.  Let's apply our methodology and look at our restults.  
 
 ```{r cache=TRUE}
@@ -1187,7 +1187,7 @@ We see we have an interval with a difference between average mean test scoes bet
 distribution being around 20.  Notice that 0 is in the interval which tells us that no difference is plausible between men and
 women, which is an important conclusion (or non conclusion). 
 
-\section{Caution on Using Bootstrap}
+### Caution on Using Bootstrap
 
 Before you create a confidence interval using a bootstrap interval you need to check the bootstrap distribution.  The bootstrap distribution
 needs to be reasonably centered around the original point estimate.  Here is an example looking at the median of a sample of 25 Mustangs cars being 

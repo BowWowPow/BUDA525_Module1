@@ -37,6 +37,8 @@ Brad Price, Ph.D.
   - [Atlanta Commute Example](#atlanta-commute-example)
   - [Removing Outliers](#removing-outliers)
   - [Comparing Two Sample Statistics](#comparing-two-sample-statistics)
+  - [SAT Scores](#sat-scores)
+  - [Caution on Using Bootstrap](#caution-on-using-bootstrap)
 - [Randomized Distributons](#randomized-distributons)
 - [Hypotheses Testing](#hypotheses-testing)
   - [Correlation Example](#correlation-example)
@@ -2258,6 +2260,8 @@ distribution is centered between 6 and 8.
 What is our interpretation of the confidence interval using the
 statistics above?
 
+### SAT Scores
+
 Lets say we want to compare the difference in the averages of SAT scores
 for men and women. Notice in this example we don’t have the same number
 of me and women observed in our sample. Which is ok, our sampling
@@ -2314,6 +2318,8 @@ scoes between men and women with the center of the distribution being
 around 20. Notice that 0 is in the interval which tells us that no
 difference is plausible between men and women, which is an important
 conclusion (or non conclusion).
+
+### Caution on Using Bootstrap
 
 Before you create a confidence interval using a bootstrap interval you
 need to check the bootstrap distribution. The bootstrap distribution
