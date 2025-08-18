@@ -1921,6 +1921,12 @@ feel for the randomness that the point estimate comes with.
 
 ### Bootstrapping
 
+<div class="vembedr">
+<div>
+<iframe src="https://www.youtube.com/embed/https://youtu.be/H91iY4uhf_Y" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
+</div>
+</div>
+
 The idea has always been that we have CLT’s to define sampling
 distributions theoretically, which is probably what you’ve discussed in
 previous stats classes and what we discussed in the bootcamp.  
@@ -2016,6 +2022,12 @@ Let’s say we want to do a 95% CI.
 
 ### Atlanta Commute Example
 
+<div class="vembedr">
+<div>
+<iframe src="https://www.youtube.com/embed/https://youtu.be/Lqiu0GJ2xGM" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
+</div>
+</div>
+
 *CommuteAtlanta* is a data set about the commute time for Atlanta. Say
 we are interested in relocating to a specific site in Atlanta, and we
 want to find the average commute time for someone in Atlanta to
@@ -2041,13 +2053,13 @@ here.
 atl$Time%>%hist(main="Histogram of Atl Commute Times")
 ```
 
-![](BUDA525Module1_files/figure-gfm/unnamed-chunk-89-1.png)<!-- -->
+![](BUDA525Module1_files/figure-gfm/unnamed-chunk-91-1.png)<!-- -->
 
 ``` r
 atl$Time%>%boxplot(main="Boxplot of Atl Commute Times")
 ```
 
-![](BUDA525Module1_files/figure-gfm/unnamed-chunk-89-2.png)<!-- -->
+![](BUDA525Module1_files/figure-gfm/unnamed-chunk-91-2.png)<!-- -->
 
 No we’re going to create the bootstrap sampling distribution. The idea
 is we resample and then calculate the mean directly, then store it in a
@@ -2086,7 +2098,7 @@ for(i in 1:10000){
 boots%>%hist(main="Sample Distribution for Mean Atlanta Commute Time")
 ```
 
-![](BUDA525Module1_files/figure-gfm/unnamed-chunk-90-1.png)<!-- -->
+![](BUDA525Module1_files/figure-gfm/unnamed-chunk-92-1.png)<!-- -->
 
 Looks symmetric so we’ll use both intervals anyways.
 
@@ -2156,13 +2168,13 @@ Lets look at the data again:
 atlQuickTimes%>%hist(main="Histogram of Times <= 90 Minutes")
 ```
 
-![](BUDA525Module1_files/figure-gfm/unnamed-chunk-93-1.png)<!-- -->
+![](BUDA525Module1_files/figure-gfm/unnamed-chunk-95-1.png)<!-- -->
 
 ``` r
 atlQuickTimes%>%boxplot(main="Boxplot of Times <= 90 Minutes")
 ```
 
-![](BUDA525Module1_files/figure-gfm/unnamed-chunk-93-2.png)<!-- --> Now
+![](BUDA525Module1_files/figure-gfm/unnamed-chunk-95-2.png)<!-- --> Now
 lets do the bootstrap approach
 
 ``` r
@@ -2177,7 +2189,7 @@ for(i in 1:10000){
 boots%>%hist(main="Sample Distribution for Mean Commute for times <= 90 Minutes")
 ```
 
-![](BUDA525Module1_files/figure-gfm/unnamed-chunk-94-1.png)<!-- -->
+![](BUDA525Module1_files/figure-gfm/unnamed-chunk-96-1.png)<!-- -->
 
 Finally let’s create the intervals
 
@@ -2208,6 +2220,12 @@ sd(boots)
 
 ### Comparing Two Sample Statistics
 
+<div class="vembedr">
+<div>
+<iframe src="https://www.youtube.com/embed/https://youtu.be/5EsQyQYRr9Y" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
+</div>
+</div>
+
 Here we will actually looking at comparing the difference between two
 sample means but the same idea can be generalized to other statistics.
 
@@ -2236,7 +2254,7 @@ for(i in 1:10000){
 hist(boots, main="Sample Distribution for meanAtl - meanStl")
 ```
 
-![](BUDA525Module1_files/figure-gfm/unnamed-chunk-96-1.png)<!-- -->
+![](BUDA525Module1_files/figure-gfm/unnamed-chunk-99-1.png)<!-- -->
 
 ``` r
 quantile(boots, c(.025,.975))
@@ -2299,7 +2317,7 @@ for(i in 1:10000){
 hist(boots)
 ```
 
-![](BUDA525Module1_files/figure-gfm/unnamed-chunk-97-1.png)<!-- -->
+![](BUDA525Module1_files/figure-gfm/unnamed-chunk-100-1.png)<!-- -->
 
 ``` r
 quantile(boots, c(.025,.975))
@@ -2322,6 +2340,12 @@ conclusion (or non conclusion).
 
 ### Caution on Using Bootstrap
 
+<div class="vembedr">
+<div>
+<iframe src="https://www.youtube.com/embed/https://youtu.be/RVD_wh09pq4" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
+</div>
+</div>
+
 Before you create a confidence interval using a bootstrap interval you
 need to check the bootstrap distribution. The bootstrap distribution
 needs to be reasonably centered around the original point estimate. Here
@@ -2342,7 +2366,7 @@ boots%>%hist(main="Bootstrap of Median Prices")
 prices%>%median()%>%abline(v=., col="red", lwd=2)
 ```
 
-![](BUDA525Module1_files/figure-gfm/unnamed-chunk-98-1.png)<!-- -->
+![](BUDA525Module1_files/figure-gfm/unnamed-chunk-102-1.png)<!-- -->
 
 You want your bootstrap distribution to be reasonably symmetric around
 your original estimate. Also we want our sampling distribution to be
@@ -2356,6 +2380,12 @@ quantile.
 
 ## Randomized Distributons
 
+<div class="vembedr">
+<div>
+<iframe src="https://www.youtube.com/embed/https://youtu.be/isF0ldFQhtI" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
+</div>
+</div>
+
 Randomized distributions are the hypothesis test version of
 bootstrapping. Again everything goes back to the creation of a sampling
 distribution, in this case we refer to it as a null distribution. The
@@ -2364,10 +2394,12 @@ our data relates to that distribution.
 
 ## Hypotheses Testing
 
-$$
-H_0: \mbox{Null Hypothesis: Claim that there is no effect or difference (simple model, always has the equal sign, could be equal, greater than equal or less than equal)} \\
-H_A: \mbox{Alternative Hypothesis: Claim for which we seek evidence (complex model)}
-$$
+H_0: Null Hypothesis: Claim that there is no effect or difference
+(simple model, always has the equal sign, could be equal, greater than
+equal or less than equal)
+
+H_A: Alternative Hypothesis: Claim for which we seek evidence (complex
+model)
 
 Lets look at a quick example, let’s say that a friend claims to be able
 to predict whether a stock will go up or down on a daily basis. We would
@@ -2411,9 +2443,17 @@ output later in this course).
 | $H_0$ True      | Type I Error     | Correct Decision     |
 | $H_0$ False     | Correct Decision | Type II Error        |
 
-Power also will increase with sample size.
+$P\left(Type I error  \mid H_0 True \right) &=\alpha$
+$P\left(\mbox{Type II error} \mid H_0 False \right)$ = Unknown but
+decreases as $n$ increases
 
 ### Comparing Two Means
+
+<div class="vembedr">
+<div>
+<iframe src="https://www.youtube.com/embed/https://youtu.be/S8U99vq_lFc" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
+</div>
+</div>
 
 Say we did an experiment comparing two marketing initiatives. We
 performed an experiment on 10 similar products where the strategy was
@@ -2543,7 +2583,7 @@ hist(randomResults)
 abline(v=originalDif, col="red", lwd=2)
 ```
 
-![](BUDA525Module1_files/figure-gfm/unnamed-chunk-102-1.png)<!-- --> The
+![](BUDA525Module1_files/figure-gfm/unnamed-chunk-108-1.png)<!-- --> The
 red mark here dictates where our data said the difference is.
 
 The p-value is the probability of being above the red line, which can be
@@ -2568,6 +2608,12 @@ sum(absGreaterThanOrig) / 10000
 
 ### Correlation Example
 
+<div class="vembedr">
+<div>
+<iframe src="https://www.youtube.com/embed/https://youtu.be/uTZ-JzZv6sE" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
+</div>
+</div>
+
 Randomized distributions are a useful tool if our sample sizes are too
 small to trust asymptotic distribution (in other words use the Central
 Limit Theorem) or sometimes the central limit theorems require stronger
@@ -2579,6 +2625,7 @@ uniform and the number of penalty yards a team gets in a game. Let $s_x$
 and $s_y$ be the sample standard deviation for x and y.
 
 Sample correlation is calculated by:
+$r= \frac{1}{n-1} \sum_{i=1}^n \left(\frac{x_i - \bar{x}}{s_x}\right)\left( \frac{(y_i - \bar{y})}{s_y}\right)$
 
 Here we load the data and check the sample correlation
 
@@ -2596,7 +2643,7 @@ with(nfl, plot(NFL_Malevolence, ZPenYds, main="Malevolence of Uniform vs Penalty
 abline(m1)
 ```
 
-![](BUDA525Module1_files/figure-gfm/unnamed-chunk-106-1.png)<!-- -->
+![](BUDA525Module1_files/figure-gfm/unnamed-chunk-113-1.png)<!-- -->
 
 Our hypothesis is
 
@@ -2623,7 +2670,7 @@ with(newData, plot(NFL_Malevolence, ZPenYds, main="Malevolence of Uniform vs Pen
 abline(m2)
 ```
 
-![](BUDA525Module1_files/figure-gfm/unnamed-chunk-108-1.png)<!-- -->
+![](BUDA525Module1_files/figure-gfm/unnamed-chunk-115-1.png)<!-- -->
 
 Now lets do it a whole bunch of times (10,000) to get our new randomized
 distributions.
@@ -2640,7 +2687,7 @@ hist(corList, main="Correlations between Penalty Yards and Uniform Malevolence")
 abline(v=sampleCor, col="red", lwd=2)
 ```
 
-![](BUDA525Module1_files/figure-gfm/unnamed-chunk-109-1.png)<!-- -->
+![](BUDA525Module1_files/figure-gfm/unnamed-chunk-116-1.png)<!-- -->
 
 Lets do a one sided test
 

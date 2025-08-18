@@ -970,6 +970,10 @@ The margin of error reflects the uncertainty of the point estimate, and has a co
 
 ### Bootstrapping
 
+```{r echo=FALSE}
+embed_youtube("https://youtu.be/H91iY4uhf_Y")
+```
+
 The idea has always been that we have CLT's to define sampling distributions theoretically, which is probably what you've discussed in previous stats classes and what we discussed in the bootcamp.  
 In theory (as the sample size gets bigger) our sampling distributions approach the CLT, that's the main idea of this entire thing, but we're not talking about theory we're talking about we're talking
 about practice.  So is there a way to use the sample we collected to get an idea what the sampling distribution is?  The answer is yes and the methodology we use is called *bootstrap*.
@@ -1036,6 +1040,10 @@ Let's say we want to do a 95% CI.
 
 
 ### Atlanta Commute Example
+
+```{r echo=FALSE}
+embed_youtube("https://youtu.be/Lqiu0GJ2xGM")
+```
 
 *CommuteAtlanta* is a data set about the commute time for Atlanta.  Say we are interested in relocating to a specific site in Atlanta, and we want to find 
 the average commute time for someone in Atlanta to understand employee productivity.
@@ -1120,6 +1128,11 @@ sd(boots)
 
 
 ### Comparing Two Sample Statistics
+
+```{r echo=FALSE}
+embed_youtube("https://youtu.be/5EsQyQYRr9Y")
+```
+
 Here we will actually looking at comparing the difference between two sample means but the same idea can be
 generalized to other statistics.
 
@@ -1189,6 +1202,10 @@ women, which is an important conclusion (or non conclusion).
 
 ### Caution on Using Bootstrap
 
+```{r echo=FALSE}
+embed_youtube("https://youtu.be/RVD_wh09pq4")
+```
+
 Before you create a confidence interval using a bootstrap interval you need to check the bootstrap distribution.  The bootstrap distribution
 needs to be reasonably centered around the original point estimate.  Here is an example looking at the median of a sample of 25 Mustangs cars being 
 sold online.
@@ -1212,15 +1229,18 @@ It should resemble the distribution of a continuous variable. For sample statist
 
 ## Randomized Distributons
 
-
+```{r echo=FALSE}
+embed_youtube("https://youtu.be/isF0ldFQhtI")
+```
 Randomized distributions are the hypothesis test version of bootstrapping.   Again everything goes back to the creation of a sampling distribution, in this case we refer to it as 
 a null distribution.  The entire goal is to simulate the null distribution so that we can see how our data relates to that distribution.  
 
 ## Hypotheses Testing
-$$
-H_0: \mbox{Null Hypothesis: Claim that there is no effect or difference (simple model, always has the equal sign, could be equal, greater than equal or less than equal)} \\
-H_A: \mbox{Alternative Hypothesis: Claim for which we seek evidence (complex model)}
-$$
+
+H_0: Null Hypothesis: Claim that there is no effect or difference (simple model, always has the equal sign, could be equal, greater than equal or less than equal)
+
+H_A: Alternative Hypothesis: Claim for which we seek evidence (complex model)
+
 
 Lets look at a quick example, let's say that a friend claims to be able to predict whether a stock will go up or down on a daily basis.  We would evaluate that as they can pick better than 50% of the time.
 The idea is we'd want to say that the person predicts better than a random guess.  So the hypotheses become
@@ -1253,19 +1273,14 @@ draw the conclusion that you want to.  It's much more complicated than reject if
 |$H_0$ False | Correct Decision | Type II Error|
 
 
-\begin{align*}
-P\left(\mbox{Type I error } \mid H_0 \mbox{ True} \right) &= $\alpha$ \\
-P\left(\mbox{Type II error} \mid H_0 \mbox{ False} \right) &= \mbox{ Unknown but decreases as } n \mbox{ increases } \\
-&=  \mbox{ Unknown but decreases as true difference increases } \\ 
-P\left(\mbox{Reject } H_0\right) &= \mbox{ Power of a Test} \\
-H_0 \mbox{ true } \mbox{Power } &= P\left(\mbox{Type I Error}\right) \\
-H_0 \mbox{ false } \mbox{Power } &= 1-P\left(\mbox{Type II Error}\right)
-\end{align*}
-
-Power also will increase with sample size. 
+$P\left(Type I error  \mid H_0 True \right) &=\alpha$ 
+$P\left(\mbox{Type II error} \mid H_0 False \right)$ = Unknown but decreases as  $n$ increases
 
 ### Comparing Two Means
 
+```{r echo=FALSE}
+embed_youtube("https://youtu.be/S8U99vq_lFc")
+```
 Say we did an experiment comparing two marketing initiatives.  We performed an experiment on 10 similar products where the strategy was randomly assigned
 5 products used machine learning aided strategies and 5 used human recommended strategies.  We got the following profit results in thousands of dollars.
 
@@ -1350,6 +1365,10 @@ sum(absGreaterThanOrig) / 10000
 ```
 
 ### Correlation Example
+```{r echo=FALSE}
+embed_youtube("https://youtu.be/uTZ-JzZv6sE")
+```
+
 Randomized distributions are a useful tool if our sample sizes are too small to trust asymptotic distribution (in other words use the Central Limit Theorem)
 or sometimes the central limit theorems require stronger assumptions.  Sample correlation has a central limit theorem but its assumptions are stronger 
 then the one for sample means.  
@@ -1358,9 +1377,7 @@ We will look at the relationship between the malevolence of a team's uniform and
 the sample standard deviation for x and y.
 
 Sample correlation is calculated by:
-\begin{align*}
-r= \frac{1}{n-1} \sum_{i=1}^n \left(\frac{x_i - \bar{x}}{s_x}\right)\left( \frac{(y_i - \bar{y})}{s_y}\right)
-\end{align*}
+$r= \frac{1}{n-1} \sum_{i=1}^n \left(\frac{x_i - \bar{x}}{s_x}\right)\left( \frac{(y_i - \bar{y})}{s_y}\right)$
 
 Here we load the data and check the sample correlation
 ```{r cache=TRUE}
