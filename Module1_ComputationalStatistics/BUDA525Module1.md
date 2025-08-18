@@ -48,7 +48,7 @@ Brad Price, Ph.D.
 
 <div class="vembedr">
 <div>
-<iframe src="https://www.youtube.com/embed/https://youtu.be/tm4188bx2BU" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
+<iframe src="https://www.youtube.com/embed/tm4188bx2BU" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
 </div>
 </div>
 
@@ -341,7 +341,7 @@ thing is to understand these basic data manipulation tools.
 
 <div class="vembedr">
 <div>
-<iframe src="https://www.youtube.com/embed/https://youtu.be/KjwCl4oPkj0" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
+<iframe src="https://www.youtube.com/embed/KjwCl4oPkj0" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
 </div>
 </div>
 
@@ -356,7 +356,7 @@ attach(BigMac2003)
 hist(TeachNI, main="Teachers Net Income (in $1000's)")
 ```
 
-![](BUDA525Module1_files/figure-gfm/unnamed-chunk-14-1.png)<!-- -->
+![](BUDA525Module1_files/figure-gfm/unnamed-chunk-15-1.png)<!-- -->
 
 To change the number of bins in the histogram we run the code:
 
@@ -364,7 +364,7 @@ To change the number of bins in the histogram we run the code:
 hist(TeachNI,breaks=15, main="Teachers Net Income (in $1000s)")
 ```
 
-![](BUDA525Module1_files/figure-gfm/unnamed-chunk-15-1.png)<!-- -->
+![](BUDA525Module1_files/figure-gfm/unnamed-chunk-16-1.png)<!-- -->
 
 In either plot we are seeing the the data has a long right tail. To do a
 box-plot we run the code:
@@ -373,7 +373,7 @@ box-plot we run the code:
 boxplot(TeachNI, main="A boxplot of Teachers Net Income (in $1000s)")
 ```
 
-![](BUDA525Module1_files/figure-gfm/unnamed-chunk-16-1.png)<!-- -->
+![](BUDA525Module1_files/figure-gfm/unnamed-chunk-17-1.png)<!-- -->
 
 Now that we are able to visualize the data we can quickly calculate
 summary statistics that we need. The first thing we can do is quickly
@@ -443,7 +443,7 @@ var(TeachNI)
 
 <div class="vembedr">
 <div>
-<iframe src="https://www.youtube.com/embed/https://youtu.be/lStLqjyzKNo" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
+<iframe src="https://www.youtube.com/embed/lStLqjyzKNo" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
 </div>
 </div>
 
@@ -688,7 +688,7 @@ packages.
 
 <div class="vembedr">
 <div>
-<iframe src="https://www.youtube.com/embed/https://youtu.be/xZq3RienLgg" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
+<iframe src="https://www.youtube.com/embed/xZq3RienLgg" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
 </div>
 </div>
 
@@ -906,7 +906,7 @@ a list. We’ll learn later how to write functions and access the output.
 
 <div class="vembedr">
 <div>
-<iframe src="https://www.youtube.com/embed/https://youtu.be/TRz8LSCQvDA" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
+<iframe src="https://www.youtube.com/embed/TRz8LSCQvDA" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
 </div>
 </div>
 
@@ -1026,7 +1026,7 @@ will react to it.
 
 <div class="vembedr">
 <div>
-<iframe src="https://www.youtube.com/embed/https://youtu.be/yGRb_dGmhLY" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
+<iframe src="https://www.youtube.com/embed/yGRb_dGmhLY" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
 </div>
 </div>
 
@@ -1428,7 +1428,7 @@ methods we will discuss.
 
 <div class="vembedr">
 <div>
-<iframe src="https://www.youtube.com/embed/https://youtu.be/wgjye9-qk-g" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
+<iframe src="https://www.youtube.com/embed/wgjye9-qk-g" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
 </div>
 </div>
 
@@ -1556,7 +1556,7 @@ comparing a single statement or entire vectors.
 
 <div class="vembedr">
 <div>
-<iframe src="https://www.youtube.com/embed/https://youtu.be/xCHldkFtERQ" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
+<iframe src="https://www.youtube.com/embed/xCHldkFtERQ" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
 </div>
 </div>
 
@@ -1831,9 +1831,10 @@ to begin your journey. Notice we can use any of these anytime.
 
 <div class="vembedr">
 <div>
-<iframe src="https://www.youtube.com/embed/https://youtu.be/FJuvD9d3LGU" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
+<iframe src="https://www.youtube.com/embed/FJuvD9d3LGU" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
 </div>
 </div>
+
 Statistical inference the process of drawing conclusions about the
 entire population based on the information in the sample. The whole
 ideas is we want to use statistics from our sample to make estimates
@@ -1923,7 +1924,7 @@ feel for the randomness that the point estimate comes with.
 
 <div class="vembedr">
 <div>
-<iframe src="https://www.youtube.com/embed/https://youtu.be/H91iY4uhf_Y" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
+<iframe src="https://www.youtube.com/embed/H91iY4uhf_Y" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
 </div>
 </div>
 
@@ -2024,7 +2025,7 @@ Let’s say we want to do a 95% CI.
 
 <div class="vembedr">
 <div>
-<iframe src="https://www.youtube.com/embed/https://youtu.be/Lqiu0GJ2xGM" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
+<iframe src="https://www.youtube.com/embed/Lqiu0GJ2xGM" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
 </div>
 </div>
 
@@ -2053,13 +2054,13 @@ here.
 atl$Time%>%hist(main="Histogram of Atl Commute Times")
 ```
 
-![](BUDA525Module1_files/figure-gfm/unnamed-chunk-91-1.png)<!-- -->
+![](BUDA525Module1_files/figure-gfm/unnamed-chunk-92-1.png)<!-- -->
 
 ``` r
 atl$Time%>%boxplot(main="Boxplot of Atl Commute Times")
 ```
 
-![](BUDA525Module1_files/figure-gfm/unnamed-chunk-91-2.png)<!-- -->
+![](BUDA525Module1_files/figure-gfm/unnamed-chunk-92-2.png)<!-- -->
 
 No we’re going to create the bootstrap sampling distribution. The idea
 is we resample and then calculate the mean directly, then store it in a
@@ -2098,7 +2099,7 @@ for(i in 1:10000){
 boots%>%hist(main="Sample Distribution for Mean Atlanta Commute Time")
 ```
 
-![](BUDA525Module1_files/figure-gfm/unnamed-chunk-92-1.png)<!-- -->
+![](BUDA525Module1_files/figure-gfm/unnamed-chunk-93-1.png)<!-- -->
 
 Looks symmetric so we’ll use both intervals anyways.
 
@@ -2168,13 +2169,13 @@ Lets look at the data again:
 atlQuickTimes%>%hist(main="Histogram of Times <= 90 Minutes")
 ```
 
-![](BUDA525Module1_files/figure-gfm/unnamed-chunk-95-1.png)<!-- -->
+![](BUDA525Module1_files/figure-gfm/unnamed-chunk-96-1.png)<!-- -->
 
 ``` r
 atlQuickTimes%>%boxplot(main="Boxplot of Times <= 90 Minutes")
 ```
 
-![](BUDA525Module1_files/figure-gfm/unnamed-chunk-95-2.png)<!-- --> Now
+![](BUDA525Module1_files/figure-gfm/unnamed-chunk-96-2.png)<!-- --> Now
 lets do the bootstrap approach
 
 ``` r
@@ -2189,7 +2190,7 @@ for(i in 1:10000){
 boots%>%hist(main="Sample Distribution for Mean Commute for times <= 90 Minutes")
 ```
 
-![](BUDA525Module1_files/figure-gfm/unnamed-chunk-96-1.png)<!-- -->
+![](BUDA525Module1_files/figure-gfm/unnamed-chunk-97-1.png)<!-- -->
 
 Finally let’s create the intervals
 
@@ -2222,7 +2223,7 @@ sd(boots)
 
 <div class="vembedr">
 <div>
-<iframe src="https://www.youtube.com/embed/https://youtu.be/5EsQyQYRr9Y" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
+<iframe src="https://www.youtube.com/embed/5EsQyQYRr9Y" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
 </div>
 </div>
 
@@ -2254,7 +2255,7 @@ for(i in 1:10000){
 hist(boots, main="Sample Distribution for meanAtl - meanStl")
 ```
 
-![](BUDA525Module1_files/figure-gfm/unnamed-chunk-99-1.png)<!-- -->
+![](BUDA525Module1_files/figure-gfm/unnamed-chunk-100-1.png)<!-- -->
 
 ``` r
 quantile(boots, c(.025,.975))
@@ -2317,7 +2318,7 @@ for(i in 1:10000){
 hist(boots)
 ```
 
-![](BUDA525Module1_files/figure-gfm/unnamed-chunk-100-1.png)<!-- -->
+![](BUDA525Module1_files/figure-gfm/unnamed-chunk-101-1.png)<!-- -->
 
 ``` r
 quantile(boots, c(.025,.975))
@@ -2342,7 +2343,7 @@ conclusion (or non conclusion).
 
 <div class="vembedr">
 <div>
-<iframe src="https://www.youtube.com/embed/https://youtu.be/RVD_wh09pq4" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
+<iframe src="https://www.youtube.com/embed/RVD_wh09pq4" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
 </div>
 </div>
 
@@ -2366,7 +2367,7 @@ boots%>%hist(main="Bootstrap of Median Prices")
 prices%>%median()%>%abline(v=., col="red", lwd=2)
 ```
 
-![](BUDA525Module1_files/figure-gfm/unnamed-chunk-102-1.png)<!-- -->
+![](BUDA525Module1_files/figure-gfm/unnamed-chunk-103-1.png)<!-- -->
 
 You want your bootstrap distribution to be reasonably symmetric around
 your original estimate. Also we want our sampling distribution to be
@@ -2382,7 +2383,7 @@ quantile.
 
 <div class="vembedr">
 <div>
-<iframe src="https://www.youtube.com/embed/https://youtu.be/isF0ldFQhtI" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
+<iframe src="https://www.youtube.com/embed/isF0ldFQhtI" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
 </div>
 </div>
 
@@ -2451,7 +2452,7 @@ decreases as $n$ increases
 
 <div class="vembedr">
 <div>
-<iframe src="https://www.youtube.com/embed/https://youtu.be/S8U99vq_lFc" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
+<iframe src="https://www.youtube.com/embed/S8U99vq_lFc" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
 </div>
 </div>
 
@@ -2583,7 +2584,7 @@ hist(randomResults)
 abline(v=originalDif, col="red", lwd=2)
 ```
 
-![](BUDA525Module1_files/figure-gfm/unnamed-chunk-108-1.png)<!-- --> The
+![](BUDA525Module1_files/figure-gfm/unnamed-chunk-109-1.png)<!-- --> The
 red mark here dictates where our data said the difference is.
 
 The p-value is the probability of being above the red line, which can be
@@ -2610,7 +2611,7 @@ sum(absGreaterThanOrig) / 10000
 
 <div class="vembedr">
 <div>
-<iframe src="https://www.youtube.com/embed/https://youtu.be/uTZ-JzZv6sE" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
+<iframe src="https://www.youtube.com/embed/uTZ-JzZv6sE" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
 </div>
 </div>
 
@@ -2643,7 +2644,7 @@ with(nfl, plot(NFL_Malevolence, ZPenYds, main="Malevolence of Uniform vs Penalty
 abline(m1)
 ```
 
-![](BUDA525Module1_files/figure-gfm/unnamed-chunk-113-1.png)<!-- -->
+![](BUDA525Module1_files/figure-gfm/unnamed-chunk-114-1.png)<!-- -->
 
 Our hypothesis is
 
@@ -2670,7 +2671,7 @@ with(newData, plot(NFL_Malevolence, ZPenYds, main="Malevolence of Uniform vs Pen
 abline(m2)
 ```
 
-![](BUDA525Module1_files/figure-gfm/unnamed-chunk-115-1.png)<!-- -->
+![](BUDA525Module1_files/figure-gfm/unnamed-chunk-116-1.png)<!-- -->
 
 Now lets do it a whole bunch of times (10,000) to get our new randomized
 distributions.
@@ -2687,7 +2688,7 @@ hist(corList, main="Correlations between Penalty Yards and Uniform Malevolence")
 abline(v=sampleCor, col="red", lwd=2)
 ```
 
-![](BUDA525Module1_files/figure-gfm/unnamed-chunk-116-1.png)<!-- -->
+![](BUDA525Module1_files/figure-gfm/unnamed-chunk-117-1.png)<!-- -->
 
 Lets do a one sided test
 

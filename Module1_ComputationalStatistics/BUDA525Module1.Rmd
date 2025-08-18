@@ -16,7 +16,9 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ```{r, echo=FALSE}
 library(vembedr)
-embed_youtube("https://youtu.be/tm4188bx2BU")
+```
+```{r ,echo=FALSE}
+embed_url("https://youtu.be/tm4188bx2BU")
 ```
 
 Traditional statistics courses focus on formulas and p-values that come from a table or straight out of the back of a textbook, while I believe that has it's 
@@ -169,7 +171,7 @@ Again this is just the first column of the data.  As we go on we will see more a
 ### Basic Statistical Methods
 
 ```{r, echo=FALSE}
-embed_youtube("https://youtu.be/KjwCl4oPkj0")
+embed_url("https://youtu.be/KjwCl4oPkj0")
 ```
 
 We know that R isn't just used for looking at data sets (could do that much better in excel) but 
@@ -218,7 +220,7 @@ var(TeachNI)
 ### Calculating P-Values and Quantiles in R
 
 ```{r, echo=FALSE}
-embed_youtube("https://youtu.be/lStLqjyzKNo")
+embed_url("https://youtu.be/lStLqjyzKNo")
 ```
 Summary statistics are great, and give us ideas about what is happening with our data, but at the end of it we will actually want
 to do some inference.  We need to be able to calculate confidence intervals and report the results of hypothesis tests.  
@@ -361,7 +363,7 @@ There are many types of classes, and most relate to certain packages or types of
 ### Data Types
 
 ```{r, echo=FALSE}
-embed_youtube("https://youtu.be/xZq3RienLgg")
+embed_url("https://youtu.be/xZq3RienLgg")
 ```
 
 We have already seen many data types in R but just haven't refereed to them in detail. The basics are
@@ -474,7 +476,7 @@ of functions, that do more than simple calculations, in R is a list.  We'll lear
 ### Missing Values in R
 
 ```{r, echo=FALSE}
-embed_youtube("https://youtu.be/TRz8LSCQvDA")
+embed_url("https://youtu.be/TRz8LSCQvDA")
 ```
 
 One of the most important and troubling pieces of working with data is working with missing data.  What do you do
@@ -525,7 +527,7 @@ missing data is and how your code will react to it.
 ## Random Number Generation in R
 
 ```{r, echo=FALSE}
-embed_youtube("https://youtu.be/yGRb_dGmhLY")
+embed_url("https://youtu.be/yGRb_dGmhLY")
 ```
 ### Why Generate Numbers Randomly
 In statistics we discuss and try to understand variation in our data.  The hope is part of that variation can be explained by some factor or
@@ -747,7 +749,7 @@ You'll need to have all of this to work through the computational methods we wil
 ## `for`, `if`, `while` Statements
 
 ```{r, echo=FALSE}
-embed_youtube("https://youtu.be/wgjye9-qk-g")
+embed_url("https://youtu.be/wgjye9-qk-g")
 ```
 Up to this point we have just accessed data, and understand the data types we want.  What if we want to
 design a matrix with a specific structure.  For instance if we want to create what is known as an Auto Regressive
@@ -824,7 +826,7 @@ OR conditional statement we use`|`.  It works comparing a single statement or en
 ## Introduction to the Tidyverse and the Pipe Operator
 
 ```{r, echo=FALSE}
-embed_youtube("https://youtu.be/xCHldkFtERQ")
+embed_url("https://youtu.be/xCHldkFtERQ")
 ```
 
 Now that we understand some of the basics in R let's start looking at some of the modern developments in R.  The "Tidyverse" as it is known are a set of packages that allow for a more simplistic workflow.  One of the main operators we're going to look at in this case ins the ` %>% ` operator which is known as the pipe operator, also known as the forward pipe operator.  What this operator does is 
@@ -913,7 +915,7 @@ Right now your head my be spinning a little and that is ok.  There are many opti
 ## Bootstrap
 
 ```{r echo=FALSE}
-embed_youtube("https://youtu.be/FJuvD9d3LGU")
+embed_url("https://youtu.be/FJuvD9d3LGU")
 ```
 
 \section{Statistical Inference (Why?/What?)}
@@ -971,7 +973,7 @@ The margin of error reflects the uncertainty of the point estimate, and has a co
 ### Bootstrapping
 
 ```{r echo=FALSE}
-embed_youtube("https://youtu.be/H91iY4uhf_Y")
+embed_url("https://youtu.be/H91iY4uhf_Y")
 ```
 
 The idea has always been that we have CLT's to define sampling distributions theoretically, which is probably what you've discussed in previous stats classes and what we discussed in the bootcamp.  
@@ -1042,7 +1044,7 @@ Let's say we want to do a 95% CI.
 ### Atlanta Commute Example
 
 ```{r echo=FALSE}
-embed_youtube("https://youtu.be/Lqiu0GJ2xGM")
+embed_url("https://youtu.be/Lqiu0GJ2xGM")
 ```
 
 *CommuteAtlanta* is a data set about the commute time for Atlanta.  Say we are interested in relocating to a specific site in Atlanta, and we want to find 
@@ -1130,7 +1132,7 @@ sd(boots)
 ### Comparing Two Sample Statistics
 
 ```{r echo=FALSE}
-embed_youtube("https://youtu.be/5EsQyQYRr9Y")
+embed_url("https://youtu.be/5EsQyQYRr9Y")
 ```
 
 Here we will actually looking at comparing the difference between two sample means but the same idea can be
@@ -1203,7 +1205,7 @@ women, which is an important conclusion (or non conclusion).
 ### Caution on Using Bootstrap
 
 ```{r echo=FALSE}
-embed_youtube("https://youtu.be/RVD_wh09pq4")
+embed_url("https://youtu.be/RVD_wh09pq4")
 ```
 
 Before you create a confidence interval using a bootstrap interval you need to check the bootstrap distribution.  The bootstrap distribution
@@ -1230,7 +1232,7 @@ It should resemble the distribution of a continuous variable. For sample statist
 ## Randomized Distributons
 
 ```{r echo=FALSE}
-embed_youtube("https://youtu.be/isF0ldFQhtI")
+embed_url("https://youtu.be/isF0ldFQhtI")
 ```
 Randomized distributions are the hypothesis test version of bootstrapping.   Again everything goes back to the creation of a sampling distribution, in this case we refer to it as 
 a null distribution.  The entire goal is to simulate the null distribution so that we can see how our data relates to that distribution.  
@@ -1279,7 +1281,7 @@ $P\left(\mbox{Type II error} \mid H_0 False \right)$ = Unknown but decreases as 
 ### Comparing Two Means
 
 ```{r echo=FALSE}
-embed_youtube("https://youtu.be/S8U99vq_lFc")
+embed_url("https://youtu.be/S8U99vq_lFc")
 ```
 Say we did an experiment comparing two marketing initiatives.  We performed an experiment on 10 similar products where the strategy was randomly assigned
 5 products used machine learning aided strategies and 5 used human recommended strategies.  We got the following profit results in thousands of dollars.
@@ -1366,7 +1368,7 @@ sum(absGreaterThanOrig) / 10000
 
 ### Correlation Example
 ```{r echo=FALSE}
-embed_youtube("https://youtu.be/uTZ-JzZv6sE")
+embed_url("https://youtu.be/uTZ-JzZv6sE")
 ```
 
 Randomized distributions are a useful tool if our sample sizes are too small to trust asymptotic distribution (in other words use the Central Limit Theorem)
