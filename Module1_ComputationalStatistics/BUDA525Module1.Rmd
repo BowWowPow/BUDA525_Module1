@@ -162,7 +162,7 @@ If we look at this line of code a little more in depth the way we will see it is
 DATASET[ Row Number, Column Number].  So if I just wanted to view the first column of the data (corresponding
 to the variable BigMac) we would type
 ```{r cache=TRUE}
-BigMac2003[,4]
+BigMac2003[,1]
 ```
 
 Again this is just the first column of the data.  As we go on we will see more and more of how to access things in 

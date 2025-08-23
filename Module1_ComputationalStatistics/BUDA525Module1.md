@@ -323,15 +323,13 @@ Number\]. So if I just wanted to view the first column of the data
 (corresponding to the variable BigMac) we would type
 
 ``` r
-BigMac2003[,4]
+BigMac2003[,1]
 ```
 
-    ##  [1]  65.9  63.5  55.4  46.4  62.9  98.4  64.4  33.3  36.9  74.7  36.4  43.9
-    ## [13]  27.3  49.5  93.2  78.0  63.6  74.7  62.3 100.6  75.3 128.2  51.0  49.9
-    ## [25]  41.1  35.7  25.7  41.4  74.1  41.0  58.7  57.3  69.3  89.2  94.9  72.2
-    ## [37]  62.2  76.5  63.9  32.5  44.0  67.4  62.6  41.5  23.5  45.6 109.6 102.2
-    ## [49]  81.1  29.4  36.0  38.8  75.5  37.0  41.2 101.7  64.3  74.7  36.4  75.5
-    ## [61]  62.6 103.2  42.0  69.4 129.4  61.0  76.4  33.8  36.0
+    ##  [1]  16  21  19  50  22  15  16  93  54  18  79  43  45  76  10  16  22  15  15
+    ## [20]  16  19  13  36  67  33 132  84  25  55  79  33  39  16  10  17  15  21  24
+    ## [39]  62  75  10  21  14  30 112 185  12  18  19  42  48  43  26  52  33  28  30
+    ## [58]  21  31  19  19  18  49  31  10  14  15  62  44
 
 Again this is just the first column of the data. As we go on we will see
 more and more of how to access things in `R`, but the most important
@@ -1571,37 +1569,7 @@ very simple you learned in a previous section:
 
 ``` r
 library(alr4)
-```
-
-    ## Loading required package: car
-
-    ## Loading required package: carData
-
-    ## Loading required package: effects
-
-    ## lattice theme set by effectsTheme()
-    ## See ?effectsTheme for details.
-
-``` r
 library(dplyr)
-```
-
-    ## 
-    ## Attaching package: 'dplyr'
-
-    ## The following object is masked from 'package:car':
-    ## 
-    ##     recode
-
-    ## The following objects are masked from 'package:stats':
-    ## 
-    ##     filter, lag
-
-    ## The following objects are masked from 'package:base':
-    ## 
-    ##     intersect, setdiff, setequal, union
-
-``` r
 BigMac2003%>%head()
 ```
 
@@ -1834,7 +1802,6 @@ to begin your journey. Notice we can use any of these anytime.
 <iframe src="https://www.youtube.com/embed/FJuvD9d3LGU" width="533" height="300" frameborder="0" allowfullscreen="" data-external="1"></iframe>
 </div>
 </div>
-
 Statistical inference the process of drawing conclusions about the
 entire population based on the information in the sample. The whole
 ideas is we want to use statistics from our sample to make estimates
