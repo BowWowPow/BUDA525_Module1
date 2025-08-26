@@ -38,24 +38,28 @@ apps<-College$Apps
 set.seed(1900)
 
 # setting up an empty var for use later. Delegates 
-bootsApp<-NULL
 
+bootsApp<-NULL
 # First thing that looks like code. thank you. 
 # "most efficient way" 
 for(j in 1:10000){
   bootsApp<-c(bootsApp,median(sample(apps,length(apps),replace = TRUE)))
 }
-
+bootsApp<-NULL
 # writing as dplyr
 library(dplyr)
 for(j in 1:10000){
   # samples apps as size apps - with replacement. Then take that and calc the
   # medium of that example
+  # said about changing medium to the other one and it "would work" 
+  # also we need to change the seed 
   my_samp=apps%>%sample(.,length(.),replace=TRUE)%>%median()
   bootsApp<-c(bootsApp,my_samp)
 }
 
 hist(bootsApp)
+
+quantile(bootsApp,c(.1,.9))
 ```
 
 
@@ -86,10 +90,15 @@ quantile(boots,c(.05,.95))
 quantile(boots,c(.25,.75))
 
 set.seed(2626)
+# he's deciding to do 10,000 reps and store those in 3000 rows
+# storing it in store
 store<-matrix(0,3000,10000)
+
 for(i in 1:10000){
+  # create the 
   store[,i]=sample(Wage$wage,3000,replace=TRUE)
 }
+# take this func and apply it to the cols and rows (1,2)
 boots<-apply(store,2,mean)
 quantile(boots,c(.1,.9))
 ```
@@ -111,14 +120,21 @@ quantile(bootsl,c(.1,.9))
 
 bstore<-NULL
 set.seed(154)
+# Time between frames
+# Set curTime pre 4lp
 Mine<-Sys.time()
 for(k in 1:1000){
 bstore[[k]]=sample(Wage$age,3000,replace=TRUE)
 }
+
 bootsl<-sapply(bstore,mean)
+# Time between frames
+# time after 4lp
 Mine2<-Sys.time()
+# Time between frames
 Mine2-Mine
 hist(bootsl)
+# subset with the last 10% and 90%
 quantile(bootsl,c(.1,.9))
 ```
 
@@ -130,6 +146,7 @@ Is the mean salary for information workers higher than industrial workers?
 
 
 ```{r}
+# this is importat - tapply - find out that thing
 mclass<-tapply(Wage$wage,Wage$jobclass,mean)
 my_stat<-mclass[2]-mclass[1]
 my_stat
@@ -140,11 +157,17 @@ my_stat
 set.seed(1900)
 samp_d<-NULL
 for(j in 1:10000){
+  # Create a new data frame and mix up the job class over and over. 
   NewDat<-data.frame(w=Wage$wage,jc=sample(Wage$jobclass,3000))
   my_stat_boot<-tapply(NewDat$w,NewDat$jc,mean)
   samp_d<-c(samp_d,my_stat_boot[2]-my_stat_boot[1])
 }
 hist(samp_d,xlim=c(-20,20))
+# WE CANNOT CALL THIS BY ITSELF 
 abline(v=my_stat)
+# This generates a black line that is off the screen. 
+# the line is meant to represent something like - the data doesn't represent
+# the null. -- ??? 
 sum(samp_d>=my_stat)/10000
+# there are 0 times our last sets didn't show up in the distro
 ```
