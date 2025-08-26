@@ -22,14 +22,39 @@ $$
 So really to apply our CLT we have to assume what the distribution of the data is, which is a fairly big assumption.  Instead we can bootstrap this distribution.  
 
 ```{r}
+install.packages("ISLR")
 library(ISLR)
 dim(College)
+head(College)
+# storeIntVar <- table$GetDataInTable
+
+
 apps<-College$Apps
+# we run sampling distros based on loads of different seeds. 
+# Each time we random this, we will get different sampling data. 
+# working hard to then run the code multiple times to see the difference in
+# variation 
+# -- This is the old way -- 
 set.seed(1900)
+
+# setting up an empty var for use later. Delegates 
 bootsApp<-NULL
+
+# First thing that looks like code. thank you. 
+# "most efficient way" 
 for(j in 1:10000){
   bootsApp<-c(bootsApp,median(sample(apps,length(apps),replace = TRUE)))
 }
+
+# writing as dplyr
+library(dplyr)
+for(j in 1:10000){
+  # samples apps as size apps - with replacement. Then take that and calc the
+  # medium of that example
+  my_samp=apps%>%sample(.,length(.),replace=TRUE)%>%median()
+  bootsApp<-c(bootsApp,my_samp)
+}
+
 hist(bootsApp)
 ```
 
