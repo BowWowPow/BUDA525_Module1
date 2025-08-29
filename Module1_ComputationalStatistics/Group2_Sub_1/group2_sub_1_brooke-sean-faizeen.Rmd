@@ -50,9 +50,9 @@ library(dplyr)
 for(j in 1:1000)
 {
   my_samp=apps%>%sample(.,length(.),replace=TRUE)%>%mean()
-  bootsApp<-c(bootsApp,my_samp)
+  bootsApplications<-c(bootsApplications,my_samp)
 }
 
-hist(bootsApp)
-quantile(bootsApp,c(.1,.9))
+hist(bootsApplications)
+quantile(bootsApplications,c(.1,.9))
 
