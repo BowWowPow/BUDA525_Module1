@@ -1,0 +1,58 @@
+---
+title: "Group2_HW1_Submision_Brooke-Sean-Faizaan"
+output: pdf_document
+date: "2025-08-29"
+editor_options: 
+  markdown: 
+    wrap: 72
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+install.packages("ISLR") 
+library(ISLR) 
+dim(College) # rows, cols
+help(College)
+
+vStore <- matrix(0,18,1000) 
+
+for(i in 1:10000)
+{ 
+  vStore[,i]=sample(Wage$wage,1000,replace=TRUE) 
+}
+
+---
+
+install.packages("ISLR")
+library(ISLR)
+dim(College)
+head(College)
+# storeIntVar <- table$GetDataInTable
+
+
+apps<-College$Apps
+
+# we run sampling distros based on loads of different seeds. 
+# Each time we random this, we will get different sampling data. 
+# working hard to then run the code multiple times to see the difference in
+# variation 
+
+# -- This is the old way -- 
+set.seed(1337)
+
+# setting up an empty var for use later. Delegates 
+bootsApplications<-NULL
+
+# writing as dplyr
+library(dplyr)
+for(j in 1:1000)
+{
+  my_samp=apps%>%sample(.,length(.),replace=TRUE)%>%mean()
+  bootsApp<-c(bootsApp,my_samp)
+}
+
+hist(bootsApp)
+quantile(bootsApp,c(.1,.9))
+
