@@ -55,4 +55,4 @@ for(j in 1:1000)
 
 hist(bootsApplications)
 quantile(bootsApplications,c(.1,.9))
-
+Code
