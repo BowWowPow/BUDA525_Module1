@@ -66,7 +66,7 @@ quantile(bootsApplications,c(.1,.9))
 ## Solution 2 
 
 ```{r}
-
+startTime <- Sys.time()
 boots1 <- NULL
 boots2 <- NULL
 boots3 <- NULL
@@ -79,7 +79,7 @@ for(j in 1:1000)
   my_samp=apps%>%sample(.,length(.),replace=TRUE)%>%mean()
   boots1<-c(boots1,my_samp)
 }
-print(boots1)
+#print(boots1)
 
 set.seed(seeds[2])
 for(j in 1:1000)
@@ -87,7 +87,7 @@ for(j in 1:1000)
   my_samp=apps%>%sample(.,length(.),replace=TRUE)%>%mean()
   boots2<-c(boots2,my_samp)
 }
-print(boots2)
+#print(boots2)
 
 set.seed(seeds[3])
 for(j in 1:1000)
@@ -95,13 +95,17 @@ for(j in 1:1000)
   my_samp=apps%>%sample(.,length(.),replace=TRUE)%>%mean()
   boots3<-c(boots3,my_samp)
 }
-print(boots3)
+#print(boots3)
+
+
+##
+##  Solution
+##      2
+##
+
 
 df <- data.frame(boots1,boots2,boots3)
 print(df)
-
-```
-```{r}
 
 boots4 <- NULL
 boots5 <- NULL
@@ -112,7 +116,7 @@ for(j in 1:5000)
   my_samp=apps%>%sample(.,length(.),replace=TRUE)%>%mean()
   boots4<-c(boots4,my_samp)
 }
-print(boots4)
+#print(boots4)
 
 set.seed(seeds[2])
 for(j in 1:5000)
@@ -120,7 +124,7 @@ for(j in 1:5000)
   my_samp=apps%>%sample(.,length(.),replace=TRUE)%>%mean()
   boots5<-c(boots5,my_samp)
 }
-print(boots5)
+#print(boots5)
 
 set.seed(seeds[3])
 for(j in 1:5000)
@@ -128,27 +132,34 @@ for(j in 1:5000)
   my_samp=apps%>%sample(.,length(.),replace=TRUE)%>%mean()
   boots6<-c(boots6,my_samp)
 }
-print(boots6)
+#print(boots6)
 
 df <- data.frame(boots4,boots5,boots6)
 print(df)
-
+endTime <- Sys.time()
+elapsed <- endTime - startTime
+print(paste("Main Calc Code: Time Elapsed - ",elapsed))
+traceback()
 ```
 ```{r}
 library(ggplot2)
 library(patchwork)
-
+startTime <- Sys.time()
 quantile(boots1,.1,.9)
 quantile(boots4,.1,.9)
-p1 <- ggplot(data.frame(x = boots1), aes(x = x)) +
-  geom_histogram(bins = 30, fill = "blue", alpha = 0.7) +
+
+p1 <- ggplot(data.frame(one_thousand_sample = boots1), aes(x = one_thousand_sample)) +
+  geom_histogram(bins = 30, fill = "blue", alpha = 0.25) +
   labs(title = "Histogram of 1,000 samples")
 
-# Plot 2
-p2 <- ggplot(data.frame(x = boots4), aes(x = x)) +
-  geom_histogram(bins = 30, fill = "red", alpha = 0.7) +
+# Make graph 2~ 5,000 samples 
+p2 <- ggplot(data.frame(five_thousand_sample = boots4), aes(x = five_thousand_sample)) +
+  geom_histogram(bins = 30, position = "identity", fill = "red", alpha = 0.25) +
   labs(title = "Histogram of 5,000 samples")
 
-# Combine with patchwork (side-by-side)
+# Combine both hists with patchwork
 p1 + p2
+endTime <- Sys.time()
+elapsed <- endTime - startTime
+print(paste("Graphing Code: Time Elapsed - ", elapsed))
 ```
