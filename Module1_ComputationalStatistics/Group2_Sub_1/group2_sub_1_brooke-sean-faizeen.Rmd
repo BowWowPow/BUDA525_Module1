@@ -1,17 +1,21 @@
 ---
 title: "Group2_HW1_Submision_Brooke-Sean-Faizaan"
-output: pdf_document
+output:
+  html_document:
+    df_print: paged
 date: "2025-08-29"
-editor_options: 
-  markdown: 
+editor_options:
+  markdown:
     wrap: 72
 ---
 
-```{r setup, include=FALSE}
+```{r}
 knitr::opts_chunk$set(echo = TRUE)
 
 
 install.packages("ISLR") 
+install.packages("patchwork")
+library(patchwork)
 library(ISLR) 
 dim(College) # rows, cols
 help(College)
@@ -23,12 +27,6 @@ for(i in 1:10000)
   vStore[,i]=sample(Wage$wage,1000,replace=TRUE) 
 }
 
----
-
-install.packages("ISLR")
-library(ISLR)
-dim(College)
-head(College)
 # storeIntVar <- table$GetDataInTable
 
 
@@ -63,72 +61,94 @@ for(j in 1:1000)
 
 hist(bootsApplications)
 quantile(bootsApplications,c(.1,.9))
-
-#---
-#Solution 2 -- Using Methods
-#---
-# Learning methods so we can setup some more "generic" principles
-# Make sure you all methods with method calls on first run to work. 
-# Here's a sample method from https://www.w3schools.com/r/
-hello_world <- function(){
-    'Hello, World!'
-}
-# We're printing the method output, but this could also be completed
-# with just calling hello_world() and having the print inside
-print(hello_world())
-# To undertand how t.test does it's double sided p-test.
-help(t.test) 
-
-# Global Variables. 
-# We're setting up a function that allows for N iterations of sampling,
-# Always picking a new seed each iteration - the nSeed controls total loops.
-# maxSeed controls how big the seed will be from 1:maxSeed
-# maxSampleLoop controls how many times we sample from our passed in model
-# dataToSample holds the dataSet we are passing into our sampling. 
-# ---
-nSeeds <- 3
-maxSeed <- 10000
-maxSampleLoop <- 3
-dataToSample <- College$Apps
-# ---
-
-tests <- NULL
-allBootSamples <- NULL
-
-sampleApps <- function(nSeeds, maxSeed, maxSampleLoop, dataToSample)
-{
-  seed <- sample(1:maxSeed,nSeeds) 
-  for(i in 1:nSeeds) 
-  {
-    # Random Seed gen - will always random between 1:Max
-    # this will do it nSeed times, so 3 currently
-    
-    set.seed(seed[i])
-    print(paste("seed: ", i, " : ", seed[i]))
-    bootsApplications<-NULL
-    for(j in 1:maxSampleLoop)
-    {
-      my_samp=dataToSample%>%sample(.,length(.),replace=TRUE)%>%mean()
-      # Once we grab a single sample 
-      bootsApplications<-c(bootsApplications,my_samp)
-    }
-    print(paste("boots Vector from :", i, " : ", paste(bootsApplications, collapse = ", ")))
-    # This weird lang has weirder encapsulation rules. <<- passes to the 
-    # global variable and not a local one with <- while inside a func/method
-    allBootSamples[i] <<- bootsApplications 
-    # Storing all P-Tests into a vector of nSeed so that we can then do
-    # more math on it afterwards/compare and contrast. 
-    tests[i] <<- t.test(bootsApplications, mu = 0)
-  }
-  for(i in 1:nSeeds)
-  {
-    print(tests[i]$p.value)
-  }
-}
-sampleApps(nSeeds, maxSeed, maxSampleLoop, dataToSample)
-traceback()
-# We will use P-testing two ways ~ 
-
-
-
 ``` 
+
+## Solution 2 
+
+```{r}
+
+boots1 <- NULL
+boots2 <- NULL
+boots3 <- NULL
+
+seeds <- sample(1:5000,3) 
+
+set.seed(seeds[1])
+for(j in 1:1000)
+{
+  my_samp=apps%>%sample(.,length(.),replace=TRUE)%>%mean()
+  boots1<-c(boots1,my_samp)
+}
+print(boots1)
+
+set.seed(seeds[2])
+for(j in 1:1000)
+{
+  my_samp=apps%>%sample(.,length(.),replace=TRUE)%>%mean()
+  boots2<-c(boots2,my_samp)
+}
+print(boots2)
+
+set.seed(seeds[3])
+for(j in 1:1000)
+{
+  my_samp=apps%>%sample(.,length(.),replace=TRUE)%>%mean()
+  boots3<-c(boots3,my_samp)
+}
+print(boots3)
+
+df <- data.frame(boots1,boots2,boots3)
+print(df)
+
+```
+```{r}
+
+boots4 <- NULL
+boots5 <- NULL
+boots6 <- NULL
+set.seed(seeds[1])
+for(j in 1:5000)
+{
+  my_samp=apps%>%sample(.,length(.),replace=TRUE)%>%mean()
+  boots4<-c(boots4,my_samp)
+}
+print(boots4)
+
+set.seed(seeds[2])
+for(j in 1:5000)
+{
+  my_samp=apps%>%sample(.,length(.),replace=TRUE)%>%mean()
+  boots5<-c(boots5,my_samp)
+}
+print(boots5)
+
+set.seed(seeds[3])
+for(j in 1:5000)
+{
+  my_samp=apps%>%sample(.,length(.),replace=TRUE)%>%mean()
+  boots6<-c(boots6,my_samp)
+}
+print(boots6)
+
+df <- data.frame(boots4,boots5,boots6)
+print(df)
+
+```
+```{r}
+library(ggplot2)
+library(patchwork)
+
+quantile(boots1,.1,.9)
+quantile(boots4,.1,.9)
+p1 <- ggplot(data.frame(x = boots1), aes(x = x)) +
+  geom_histogram(bins = 30, fill = "blue", alpha = 0.7) +
+  labs(title = "Histogram of 1,000 samples")
+
+# Plot 2
+p2 <- ggplot(data.frame(x = boots4), aes(x = x)) +
+  geom_histogram(bins = 30, fill = "red", alpha = 0.7) +
+  labs(title = "Histogram of 5,000 samples")
+
+# Combine with patchwork (side-by-side)
+p1 + p2
+```
