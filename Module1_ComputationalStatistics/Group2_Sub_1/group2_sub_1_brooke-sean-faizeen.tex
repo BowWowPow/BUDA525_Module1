@@ -37,6 +37,16 @@
 \makeatother
 \usepackage{xcolor}
 \usepackage[margin=1in]{geometry}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
 \usepackage{graphicx}
 \makeatletter
 \newsavebox\pandoc@box
@@ -84,28 +94,55 @@ for(i in 1:10000) \{ vStore{[},i{]}=sample(Wage\$wage,1000,replace=TRUE)
 install.packages(``ISLR'') library(ISLR) dim(College) head(College) \#
 storeIntVar \textless- table\$GetDataInTable
 
-apps\textless-College\$Apps \# we run sampling distros based on loads of
-different seeds. \# Each time we random this, we will get different
-sampling data. \# working hard to then run the code multiple times to
-see the difference in \# variation \# -- This is the old way --
-set.seed(1900)
+apps\textless-College\$Apps
+
+\section{we run sampling distros based on loads of different
+seeds.}\label{we-run-sampling-distros-based-on-loads-of-different-seeds.}
+
+\section{Each time we random this, we will get different sampling
+data.}\label{each-time-we-random-this-we-will-get-different-sampling-data.}
+
+\section{working hard to then run the code multiple times to see the
+difference
+in}\label{working-hard-to-then-run-the-code-multiple-times-to-see-the-difference-in}
+
+\section{variation}\label{variation}
+
+\section{-- This is the old way --}\label{this-is-the-old-way}
+
+set.seed(1337)
 
 \section{setting up an empty var for use later.
 Delegates}\label{setting-up-an-empty-var-for-use-later.-delegates}
 
-bootsApp\textless-NULL \# First thing that looks like code. thank you.
-\# ``most efficient way'' for(j in 1:10000)\{
-bootsApp\textless-c(bootsApp,median(sample(apps,length(apps),replace =
-TRUE))) \} bootsApp\textless-NULL \# writing as dplyr library(dplyr)
-for(j in 1:1000)\{ \# samples apps as size apps - with replacement. Then
-take that and calc the \# medium of that example \# said about changing
-medium to the other one and it ``would work'' \# also we need to change
-the seed
-my\_samp=apps\%\textgreater\%sample(.,length(.),replace=TRUE)\%\textgreater\%median()
-bootsApp\textless-c(bootsApp,my\_samp) \}
+bootsApplications\textless-NULL
 
-hist(bootsApp)
+\section{writing as dplyr}\label{writing-as-dplyr}
 
-quantile(bootsApp,c(.1,.9))
+library(dplyr) for(j in 1:1000) \{
+my\_samp=apps\%\textgreater\%sample(.,length(.),replace=TRUE)\%\textgreater\%mean()
+bootsApplications\textless-c(bootsApplications,my\_samp) \}
+
+hist(bootsApplications) quantile(bootsApplications,c(.1,.9))
+
+\begin{longtable}[]{@{}l@{}}
+\toprule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Soluton 2 -- Methods \\
+\end{longtable}
+
+\section{Learning methods so we can setup some more ``generic''
+principles}\label{learning-methods-so-we-can-setup-some-more-generic-principles}
+
+\section{Make sure you}\label{make-sure-you}
+
+hello\_world \textless- function()\{ `Hello, World!' \}
+print(hello\_world())
+
+\section{}\label{section}
+
+help(t.test)
 
 \end{document}
