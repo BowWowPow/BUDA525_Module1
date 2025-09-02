@@ -111,9 +111,8 @@ sampleApps <- function(nSeeds, maxSeed, maxSampleLoop, dataToSample)
       my_samp=dataToSample%>%sample(.,length(.),replace=TRUE)%>%mean()
       # Once we grab a single sample 
       bootsApplications<-c(bootsApplications,my_samp)
-      
     }
-    print(paste("boots Vector from :", i, " : ",bootsApplications))
+    print(paste("boots Vector from :", i, " : ", paste(bootsApplications, collapse = ", ")))
     # This weird lang has weirder encapsulation rules. <<- passes to the 
     # global variable and not a local one with <- while inside a func/method
     allBootSamples[i] <<- bootsApplications 
