@@ -10,7 +10,7 @@ editor_options:
 ---
 
 ```{r}
-knitr::opts_chunk$set(echo = TRUE)
+#knitr::opts_chunk$set(echo = TRUE)
 
 
 install.packages("ISLR") 
@@ -56,8 +56,10 @@ for(j in 1:1000)
   my_samp=apps%>%sample(.,length(.),replace=TRUE)%>%mean()
   # Once we grab a single sample 
   bootsApplications<-c(bootsApplications,my_samp)
-  print(bootsApplications)
+  #print(bootsApplications)
 }
+
+#print(bootsApplications)
 
 hist(bootsApplications)
 quantile(bootsApplications,c(.1,.9))
@@ -134,8 +136,7 @@ for(j in 1:5000)
 }
 #print(boots6)
 
-df <- data.frame(boots4,boots5,boots6)
-print(df)
+c
 endTime <- Sys.time()
 elapsed <- endTime - startTime
 print(paste("Main Calc Code: Time Elapsed - ",elapsed))
@@ -154,7 +155,7 @@ p1 <- ggplot(data.frame(one_thousand_sample = boots1), aes(x = one_thousand_samp
 
 # Make graph 2~ 5,000 samples 
 p2 <- ggplot(data.frame(five_thousand_sample = boots4), aes(x = five_thousand_sample)) +
-  geom_histogram(bins = 30, position = "identity", fill = "red", alpha = 0.25) +
+  geom_histogram(bins = 30, fill = "red", alpha = 0.25) +
   labs(title = "Histogram of 5,000 samples")
 
 # Combine both hists with patchwork
@@ -162,4 +163,50 @@ p1 + p2
 endTime <- Sys.time()
 elapsed <- endTime - startTime
 print(paste("Graphing Code: Time Elapsed - ", elapsed))
+```
+# Hist of 1,000
+```{r}
+
+isPrivateOrPublic <- College$Private
+isPrivateOrPublic
+
+bootPriOrPub <- NULL
+# Set base values to 0 so there is nothing from previous runs of this code
+privateCount <- 0
+pubCount <- 0
+# we know our dataset is 777 in size,
+for(j in 1:777)
+{
+  #print(isPrivateOrPublic[j])
+  if(isPrivateOrPublic[j] == "No")
+  {
+    privateCount = privateCount + 1 
+  }
+  if(isPrivateOrPublic[j] == "Yes")
+  {
+    pubCount = pubCount + 1 
+  }
+}
+
+for(j in 1:777)
+{
+  #print(isPrivateOrPublic[j])
+  if(isPrivateOrPublic[j] == "No")
+  {
+    isPrivateOrPublic[j] = 0
+  }
+  else if(isPrivateOrPublic[j] == "Yes")
+  {
+    isPrivateOrPublic[j] = 1
+  }
+}
+
+
+privateCount + pubCount
+
+privateCount / 777 * 100
+
+pubCount / 777 * 100
+
+
 ```
