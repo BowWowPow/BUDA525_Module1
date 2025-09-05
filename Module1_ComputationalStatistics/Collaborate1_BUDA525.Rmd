@@ -151,6 +151,7 @@ Is the mean salary for information workers higher than industrial workers?
 
 ```{r}
 # this is importat - tapply - find out that thing
+#  Mean of wave  jobclass
 mclass<-tapply(Wage$wage,Wage$jobclass,mean)
 my_stat<-mclass[2]-mclass[1]
 my_stat
@@ -161,10 +162,13 @@ my_stat
 set.seed(1900)
 samp_d<-NULL
 for(j in 1:10000){
-  # Create a new data frame and mix up the job class over and over. 
+  # Create a new data frame and mix up the job class over and over. # JC = jobclass
+  # dataset we're breaking up the relationship between wage/jobclass.
   NewDat<-data.frame(w=Wage$wage,jc=sample(Wage$jobclass,3000))
   my_stat_boot<-tapply(NewDat$w,NewDat$jc,mean)
   samp_d<-c(samp_d,my_stat_boot[2]-my_stat_boot[1])
+  
+  ## ^^ null distro ^^
 }
 hist(samp_d,xlim=c(-20,20))
 # WE CANNOT CALL THIS BY ITSELF 
@@ -172,6 +176,7 @@ abline(v=my_stat)
 # This generates a black line that is off the screen. 
 # the line is meant to represent something like - the data doesn't represent
 # the null. -- ??? 
+# how many times did I see when my_stat was less than samp_d/n samples
 sum(samp_d>=my_stat)/10000
 # there are 0 times our last sets didn't show up in the distro
 ```

@@ -52,11 +52,13 @@ for(j in 1:1000)
 hist(bootsApplications)
 quantile(bootsApplications,c(.1,.9))
 ``` 
-
+At an 80% confidence level, we see great clustering around the 3,000 mark for our applications to colleges in our dataset. 
+With a higher rise at the 2,800 mark and 3,200 mark, we might be able to say that we have a bit of a concentrated number for most colleges between this range. The rest are not outlines, but with more data, I might expect our mid point to rise higher and fall off steeper.
 
 
 ## Solution 2 
 ```{r}
+startTime <- Sys.time()
 # WE are starting our our System time to get our init UTC time format. 
 startTime <- Sys.time()
 boots1 <- NULL
@@ -93,7 +95,14 @@ for(j in 1:1000)
 # Printing the combined data frame for boots 1,2,3 so we can verify our data.
 df <- data.frame(boots1,boots2,boots3)
 #print(df)
+endTime <- Sys.time()
+elapsed <- endTime - startTime
+print(paste("1,000 sample Calc Code: Time Elapsed - ",elapsed))
+```
 
+Once our 1,000 samples has been run 3 times, we have our seeds stored for use in our 5,000 sample distributions that we will see below.
+
+```{r}
 boots4 <- NULL
 boots5 <- NULL
 boots6 <- NULL
@@ -125,7 +134,7 @@ endTime <- Sys.time()
 elapsed <- endTime - startTime
 # NOTE: we are doing a version of Concatenation, but with strings on numbers, hense
 # paste
-print(paste("Main Calc Code: Time Elapsed - ",elapsed))
+print(paste("5,000 sample Calc Code: Time Elapsed - ",elapsed))
 ```
 ## Graphing Solution 2
 So now that we have the main calculation and have got all of our data, let's graph it!
@@ -170,41 +179,42 @@ We are astonished that the computational time is so quick. We're not sure if thi
 isPrivateOrPublic <- College$Private
 #isPrivateOrPublic
 
-# Set base values to 0 so there is nothing from previous runs of this code
-bootPriOrPub <- NULL
-privateCount <- 0
-pubCount <- 0
+# tapply ( x, index, mean/median/other)
+# do calcs on X, for each instance of Index, then compute the mean on X. 
+appsGroupedByPrivate<-tapply(College$Apps,College$Private,mean)
+appsGroupedByPrivate
 
-# we know our dataset is 777 in size, In this case, we were not able to sample
-# when the data was Alphas, so we completed a quick transpose to 0 for 1
-sampleSet <- NULL
-for(j in 1:777)
-{
-  if(isPrivateOrPublic[j] == "No")
-  {
-    sampleSet <- c(sampleSet,0)
-  }
-  if(isPrivateOrPublic[j] == "Yes")
-  {
-    sampleSet <- c(sampleSet,1)
-  }
+my_stat<-appsGroupedByPrivate[1] - appsGroupedByPrivate[2]
+data.frame(my_stat)
+```
+TApply allows us to group two cols together and then do an execution on 1 of those. In our usecase, we are spinning our apps data around our 'Yes' and 'No' per entry of yes and no. This is why y/n is our headers and apps is our data in the col. Once we have these, tapply is set to use the mean to get the "average" of all grouping of 'yes' and 'no'. This only works one way as we can't get the mean of alpha values. 
+
+minus our stats gives us what is the "remainder" which tells us which is more than the other in terms of college applications from private vs public schools. ~~~ what is our observation ~~~ 
+```{r}
+##Info-Industrial>0 (Alt Hyp)
+## Info-Industiral=0 (Null Hyp)
+## We want to generatee the null hypothesis that the two means are equal
+## We want to know do info make more than industrial (avg higher)
+set.seed(660)
+samp_d<-NULL
+dim(College) # 777 -- so we use this in our sampling
+for(j in 1:10000){
+  NewDat<-data.frame(appers=College$Apps,priv=sample(College$Private, 777))
+  my_stat_boot<-tapply(NewDat$appers,NewDat$priv,mean)
+  samp_d<-c(samp_d,my_stat_boot[2]-my_stat_boot[1])
+  ## ^^ null distro ^^
 }
+#df<- data.frame(samp_d)
+#df
 
-# Let's now sample from the new "Sample Set" and do it 5,000 times
-bootsPriOrPub <- NULL
-for(j in 1:5000)
-{
-  my_samp=sampleSet%>%sample(.,length(.),replace=TRUE)%>%mean()
-  bootsPriOrPub<-c(bootsPriOrPub,my_samp)
-}
-
-summary(sampleSet)
-# From research, the t.test method will create a large list of data, one of which
-# is our double sided p.value test. 
-pTest <- t.test(sampleSet)
-# We are then calling into the 3rd position of that list to grab the P-value
-pTest[3]
+hist(samp_d,xlim=c(-20,20))
+# WE CANNOT CALL THIS BY ITSELF 
+abline(v=my_stat)
+my_stat
+# div by the number of samples taken
+sum(samp_d>=my_stat)/10000
+# there are 0 times our last sets didn't show up in the distro
 
 ```
 
-At a 0.05 significance level, our p value is less and therefore we reject the hypothesis. The visibility into this data set is not very high due to limited data. 777 data points in the set is very minimal compared to the entirety of the national scale. It is surely not enough to make conclusions, as more data is likely missing than what we interpreted. It's difficult to assume that 777 data points could scale to a hypothesis about the entire country rather than just a region. If this were just a county, maybe we could consider.
+At 0 for our sum, we cannot reject the null hypothesis in this case as it does look like there is a statistical relationship between Appplications and Private/Public data. 
