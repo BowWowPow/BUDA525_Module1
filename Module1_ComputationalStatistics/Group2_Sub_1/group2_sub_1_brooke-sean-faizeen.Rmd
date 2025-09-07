@@ -189,7 +189,7 @@ data.frame(my_stat)
 ```
 TApply allows us to group two cols together and then do an execution on 1 of those. In our usecase, we are spinning our apps data around our 'Yes' and 'No' per entry of yes and no. This is why y/n is our headers and apps is our data in the col. Once we have these, tapply is set to use the mean to get the "average" of all grouping of 'yes' and 'no'. This only works one way as we can't get the mean of alpha values. 
 
-minus our stats gives us what is the "remainder" which tells us which is more than the other in terms of college applications from private vs public schools. ~~~ what is our observation ~~~ 
+minus our stats gives us what is the "remainder" which tells us which is more than the other in terms of college applications from private vs public schools. We observe still mostly 'No' or Private applications overwhelming the public averages per College.
 ```{r}
 ##Info-Industrial>0 (Alt Hyp)
 ## Info-Industiral=0 (Null Hyp)
@@ -217,4 +217,4 @@ sum(samp_d>=my_stat)/10000
 
 ```
 
-At 0 for our sum, we cannot reject the null hypothesis in this case as it does look like there is a statistical relationship between Appplications and Private/Public data. 
+Out end value for P value is 0. Because that is the case, we will reject the null as it's the most correlated hypothesis scenario possible. Correlation however does not equal causation and we're not measuring external variables, but based on what we were given, we can say that our test is less than 0.05. 
